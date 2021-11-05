@@ -1,0 +1,21 @@
+.navbar {
+    font-size: 1.2rem;
+    
+    
+    &__ul{
+        
+        display: flex;
+        
+        &-li {
+            
+            margin-left: 3rem;
+            padding-top: 2rem;
+            
+            a {
+                color: $white;
+
+            }
+        }
+        
+    }
+}

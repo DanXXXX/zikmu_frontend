@@ -1,0 +1,75 @@
+// 1. Inclusions de nos abstracts
+/*
+    – abstracts/
+|   |– _variables.scss    # Sass Variables
+|   |– _functions.scss    # Sass Functions
+|   |– _mixins.scss       # Sass Mixins
+|   |– _placeholders.scss # Sass Placeholders
+*/
+@import
+    'abstracts/variables';
+
+// 2. Inclusion de nos vendors
+/*
+    Ici, nous n'avons pas de dossier "vendors".
+    En effet, nous utilisons NPM, afin de gérer nos dépendances.
+   
+        /*
+        abstracts/
+        vendors/
+        base/
+        layout/
+        components/
+        pages/
+        themes/
+
+        
+        
+        https://sass-guidelin.es/fr/
+        
+        */
+
+
+// ATTENTION A BIEN REMPLIR OU COMMENTER CHAQUE LIGNE
+/*
+
+base/
+ _reset.scss        # Reset/normalize
+ _typography.scss   # Typography rules
+                    # Etc.
+*/
+
+
+// 2. Import de la base
+@import
+    'base/reset',
+    'base/normalize',
+    'base/base';
+
+
+// 3. Import des layout
+  @import
+    'layout/header';
+//     'layout/sidebar',
+//     'layout/main',
+//     'layout/footer';
+       
+
+
+// 4. Import des components
+@import
+    
+    'components/brand',
+    'components/navbar',
+    'components/form-contact',
+    'components/button';
+   
+    
+
+    
+
+
+// 5. Import shame
+@import
+    'shame';
+
