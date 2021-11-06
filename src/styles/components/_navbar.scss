@@ -1,21 +1,27 @@
-.navbar {
-    font-size: 1.2rem;
-    
-    
-    &__ul{
-        
-        display: flex;
-        
-        &-li {
-            
-            margin-left: 3rem;
-            padding-top: 2rem;
-            
-            a {
-                color: $white;
+.icon-bar {
+  width: 100%;
+  background-color: #555;
+  overflow: auto;
+}
 
-            }
-        }
-        
-    }
+.icon-bar a {
+  float: left;
+  width: 15vw;
+  text-align: center;
+  padding: 12px 0;
+  transition: all 0.3s ease;
+  color: white;
+  font-size: 15px;
+}
+
+.icon-bar a:hover {
+  background-color: #000;
+}
+
+.active {
+  background-color: #aa049c;
+}
+
+.nana {
+  bottom: 0;
 }

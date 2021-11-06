@@ -1,37 +1,31 @@
-import React  from 'react';
-import {Link} from "react-router-dom";
+import React from "react";
+import { Link } from "react-router-dom";
 
 function Navbar(props) {
-    return (
-        
-            <nav className="navbar">
-                <ul className="navbar__ul">
-                    <li className="navbar__ul-li">
-                        <Link to="/" className="nav__link">Home</Link>
-                    </li>
-                
-                   
-                    <li className="navbar__ul-li">
-                        <Link to="/Login" className="nav__link"><i class='bx bx-user'></i>Login</Link>
-                    </li>
-                   
-                    <li className="navbar__ul-li">
-                        <Link to="/Register" className="nav__link">Register</Link>
-                    </li>
-                    <li className="navbar__ul-li">
-                        <Link to="/Event" className="nav__link">Event</Link>
-                    </li>
-                    <li className="navbar__ul-li">
-                        <Link to="/Admin" className="nav__link">Admin</Link>
-                    </li>
-                    <li className="navbar__ul-li">
-                        <Link to="/Tchat" className="nav__link">tchat</Link>
-                    </li>
-                </ul>
-            </nav>   
-    )
+  return (
+    <nav className="nana">
+      <div class="icon-bar">
+        <Link to="/">
+          <i className="fa fa-search">Home</i>
+        </Link>
+        <Link to="/Login">
+          <i class="fa fa-envelope">Login</i>
+        </Link>
+        <Link to="/Register">
+          <i class="">Register</i>
+        </Link>
+        <Link to="/Event" className="active">
+          <i class="fa fa-globe">Event</i>
+        </Link>
+        <Link to="/Admin">
+          <i class="fa fa-trash">Admin</i>
+        </Link>
+        <Link to="/Tchat">
+          <i class="fa fa-trash">Tchat</i>
+        </Link>
+      </div>
+    </nav>
+  );
 }
 
-export default Navbar
-
-
+export default Navbar;
