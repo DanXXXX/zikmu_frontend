@@ -4,6 +4,7 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Header from "./components/layout/Header";
 import Footer from "./components/layout/Footer";
 import Home from "./components/pages/Home";
+import Message from "./components/pages/Message";
 import Update from "./components/pages/admin/Update";
 import Register from "./components/pages/Register";
 import Login from "./components/pages/Login";
@@ -22,6 +23,7 @@ function App() {
             <Route exact path="/" component={Home} />
             <Route path="/Login" component={Login} />
             <Route path="/Register" component={Register} />
+            <Route patch="/Tchat" component={Message} />
             <Route path="*" component={Error404} />
           </Switch>
         </div>
