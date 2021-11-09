@@ -24,7 +24,7 @@ function Navbar(props) {
           <i class="fa fa-trash">Tchat</i>
         </Link>
         <Link to="/Contact">
-          <i class="fa fa-envelope"></i>
+          <i class="fa fa-envelope">Contact</i>
         </Link>
       </div>
     </nav>
