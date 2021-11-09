@@ -8,23 +8,23 @@ function Navbar(props) {
         <Link to="/">
           <i className="fa fa-search">Home</i>
         </Link>
-        <Link to="/Login">
+        <Link to="/login">
           <i class="fa fa-envelope">Login</i>
         </Link>
-        <Link to="/Register">
+        <Link to="/register">
           <i class="">Register</i>
         </Link>
-        <Link to="/Event" className="active">
+        <Link to="/event" className="active">
           <i class="fa fa-globe">Event</i>
         </Link>
-        <Link to="/Admin">
+        <Link to="/admin">
           <i class="fa fa-trash">Admin</i>
         </Link>
-        <Link to="/Tchat">
-          <i class="fa fa-trash">Tchat</i>
+        <Link to="/conversation">
+          <i class="fa fa-trash">Conversation</i>
         </Link>
-        <Link to="/Contact">
-          <i class="fa fa-envelope"></i>
+        <Link to="/contact">
+          <i class="fa fa-envelope">Contact</i>
         </Link>
       </div>
     </nav>
