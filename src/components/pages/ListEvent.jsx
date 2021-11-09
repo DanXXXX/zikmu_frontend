@@ -37,9 +37,8 @@ export default function ListEvent() {
                     console.log(docs.title);
                     return (
                         <>
-                        <Event image={docs.file} title={docs.title}
-                        category={docs.category} location={docs.location}/>
-                        
+                            <Event image={docs.file} title={docs.title}
+                                category={docs.category} location={docs.location} />
                         </>
                     )
                 }
