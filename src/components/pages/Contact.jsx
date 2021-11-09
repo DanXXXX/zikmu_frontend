@@ -5,8 +5,7 @@ import axios from "axios";
 
 export default function Contact() {
   const {
-    register,
-    // handleSubmit,
+    // register,
     formState: { errors },
   } = useForm();
 
@@ -41,18 +40,10 @@ export default function Contact() {
     setMessage(e.target.value);
   };
 
-  //   const { fullName, email, message } = e.target.elements;
-  //   let details = {
-  //     fullName: fullName.value,
-  //     email: email.value,
-  //     message: message.value,
-  //   };
-  // };
-
   axios({
     method: "POST",
     url: "http: localhost:4000/Contact",
-    data,
+    data: { setData },
   }).then((response) => {
     if (response.data.status === "success") {
       alert("Message sent.");
@@ -110,20 +101,21 @@ export default function Contact() {
           <textarea
             className="form-control"
             rows="5"
+            type="text"
             name="message"
             id="message"
             value={message}
             onChange={handleMessage}
-            {...register("message", {
-              required: "Message is required !",
-              maxLength: 500,
-            })}
+            // {...register("message", {
+            //   required: "Message is required !",
+            //   pattern: { maxLength: 500 },
+            // })}
           />
           <p style={{ color: "red" }}>
             {errors.message && errors.message.message}
           </p>
         </div>
-        <button type="submit" className="btn">
+        <button type="submit" className="btn btn-outline-dark">
           Submit
         </button>
       </form>
