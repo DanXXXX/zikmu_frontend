@@ -6,6 +6,7 @@ import Footer from "./components/layout/Footer";
 import Home from "./components/pages/Home";
 import Update from "./components/pages/admin/Update";
 import Register from "./components/pages/Register";
+import Signup from "./components/pages/Signup";
 import Login from "./components/pages/Login";
 import Contact from "./components/pages/Contact";
 import Error404 from "./components/pages/Error404";
@@ -21,6 +22,7 @@ function App() {
         <div>
           <Switch>
             <Route exact path="/" component={Home} />
+            <Route path="/Signup" component={Signup} />
             <Route path="/Login" component={Login} />
             <Route path="/Register" component={Register} />
             <Route path="/Contact" component={Contact} />

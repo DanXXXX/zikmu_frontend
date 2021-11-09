@@ -11,6 +11,9 @@ function Navbar(props) {
         <Link to="/Login">
           <i class="fa fa-envelope">Login</i>
         </Link>
+        <Link to="/Signup">
+          <i class="fa fa-envelope">Sign up</i>
+        </Link>
         <Link to="/Register">
           <i class="">Register</i>
         </Link>
@@ -21,7 +24,7 @@ function Navbar(props) {
           <i class="fa fa-trash">Admin</i>
         </Link>
         <Link to="/Tchat">
-          <i class="fa fa-trash">Tchat</i>
+          <i class="fa fa-trash">chat</i>
         </Link>
         <Link to="/Contact">
           <i class="fa fa-envelope">Contact</i>
