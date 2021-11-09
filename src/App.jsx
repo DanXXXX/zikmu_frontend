@@ -7,6 +7,7 @@ import Home from "./components/pages/Home";
 import Update from "./components/pages/admin/Update";
 import Register from "./components/pages/Register";
 import Login from "./components/pages/Login";
+import Contact from "./components/pages/Contact";
 import Error404 from "./components/pages/Error404";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.min.js.map";
@@ -22,6 +23,7 @@ function App() {
             <Route exact path="/" component={Home} />
             <Route path="/Login" component={Login} />
             <Route path="/Register" component={Register} />
+            <Route path="/Contact" component={Contact} />
             <Route path="*" component={Error404} />
           </Switch>
         </div>
