@@ -1,10 +1,11 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 import { useState } from "react";
+import axios from "axios";
 
 export default function SignUp() {
   const {
-    register,
+    // register,
     handleSubmit,
     formState: { errors },
   } = useForm();
@@ -25,8 +26,9 @@ export default function SignUp() {
   const [fullName, setFullName] = useState("");
   const [surname, setSurname] = useState("");
   const [email, setEmail] = useState("");
+  const [gender, setGender] = useState("");
   const [password, setPassword] = useState("");
-  const [confirmPass, SetConfirmPass] = useState("");
+  const [confirmPass, setConfirmPass] = useState("");
 
   const handleName = (e) => {
     setFullName(e.target.value);
@@ -37,6 +39,9 @@ export default function SignUp() {
   const handleEmail = (e) => {
     setEmail(e.target.value);
   };
+  const handleGender = (e) => {
+    setGender(e.target.value);
+  };
   const handlePassword = (e) => {
     setPassword(e.target.value);
   };
@@ -44,22 +49,35 @@ export default function SignUp() {
     setConfirmPass(e.target.value);
   };
 
+  axios({
+    method: "POST",
+    url: "http: localhost:4000/Signup",
+    data: { setData },
+  }).then((response) => {
+    if (response.data.status === "success") {
+      alert("Registration sent.");
+      this.restForm();
+    } else if (response.data.status === "fail") {
+      alert("Registration failed to send. ");
+    }
+  });
+
   return (
     <div className="outer">
       <div className="inner">
         <div className="SignUpForm">
-          <form onSubmit={handleSubmit}>
+          <form onSubmit={handleSubmit(onSubmit)}>
             <h1>Sign Up</h1>
 
-            <div className="form-group firstName">
-              <label>First name</label>
+            <div className="form-group fullName">
+              <label>Full name</label>
               <input
-                name="firstName"
+                name="fullName"
                 type="text"
                 className="form-control"
-                placeholder="First name"
+                placeholder="Full name"
                 value={fullName}
-                onChange={(e) => setState({ firstName: e.target.value })}
+                onChange={handleName}
               />
             </div>
 
@@ -71,19 +89,7 @@ export default function SignUp() {
                 className="form-control"
                 placeholder="Surname"
                 value={surname}
-                onChange={(e) => this.setState({ surName: e.target.value })}
-              />
-            </div>
-
-            <div className="form-group userName">
-              <label>Username</label>
-              <input
-                name="userName"
-                type="text"
-                className="form-control"
-                placeholder="Username"
-                value={this.state.userName}
-                onChange={(e) => this.setState({ userName: e.target.value })}
+                onChange={handleSurname}
               />
             </div>
 
@@ -94,9 +100,25 @@ export default function SignUp() {
                 type="email"
                 className="form-control"
                 placeholder="Enter your email"
-                value={this.state.email}
-                onChange={(e) => this.setState({ email: e.target.value })}
+                value={email}
+                onChange={handleEmail}
               />
+            </div>
+
+            <div className="form-group userGender">
+              <label>
+                Sex
+                <select
+                  name="userGender"
+                  className="form-control"
+                  placeholder="Sex"
+                  value={gender}
+                  onChange={handleGender}
+                >
+                  <option value="men">Homme</option>
+                  <option value="women">Femme</option>
+                </select>
+              </label>
             </div>
 
             <div className="form-group userPassword">
@@ -106,8 +128,8 @@ export default function SignUp() {
                 type="password"
                 className="form-control"
                 placeholder="Enter your password"
-                value={this.state.password}
-                onChange={(e) => this.setState({ password: e.target.value })}
+                value={password}
+                onChange={handlePassword}
               />
             </div>
             <div className="form-group userPassword">
@@ -117,10 +139,8 @@ export default function SignUp() {
                 type="password"
                 className="form-control"
                 placeholder="Confirm your password"
-                value={this.state.confirmPassword}
-                onChange={(e) =>
-                  this.setState({ confirmPassword: e.target.value })
-                }
+                value={confirmPass}
+                onChange={handleConfirmPass}
               />
             </div>
             <div className="button-forms d-grid gap-2 col-12 mx-auto">
