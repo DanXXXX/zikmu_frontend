@@ -1,25 +1,17 @@
 import react from "react";
 import { useForm } from "react-hook-form";
 import { useState } from "react";
-
+import axios from "axios";
 export default function PostForm() {
   const {
     formState: { errors },
   } = useForm();
 
-  const [data, setData] = useState([]);
-  const [status, setStatus] = useState("Submit");
-
   const [posterId, setPosterId] = useState("");
   const [message, setMessage] = useState("");
   const [picture, setPicture] = useState("");
   const [video, setVideo] = useState("");
-  const [likers, setLikers] = useState("");
-  const [comments, setComments] = useState("");
 
-  const handlePosterId = (e) => {
-    setPosterId(e.target.value);
-  };
   const handleMessage = (e) => {
     setMessage(e.target.value);
   };
@@ -29,18 +21,12 @@ export default function PostForm() {
   const handleVideo = (e) => {
     setVideo(e.target.value);
   };
-  const handleLikers = (e) => {
-    setLikers(e.target.value);
-  };
-  const handleComments = (e) => {
-    setComments(e.target.value);
-  };
 
   const requestOptions = () => {
     axios({
       method: "POST",
-      url: "http://localhost:4000/user/signup",
-      data: { posterId, message, picture, video, likers, comments },
+      url: "http://localhost:4000/post/submit",
+      data: { message, picture, video },
     }).then((response) => {
       if (response.data.status === "success") {
         alert("Post sent.");
@@ -54,6 +40,55 @@ export default function PostForm() {
   return (
     <div>
       <h1 className="title">Rédiger un post</h1>
+      <div className="PostForm">
+        <form onSubmit={requestOptions}>
+          <h1>Post form</h1>
+          <div className="form-group message">
+            <label>Message</label>
+            <input
+              name="message"
+              type="text"
+              className="form-control"
+              placeholder="Message"
+              value={message}
+              onChange={handleMessage}
+            />
+          </div>
+
+          <div className="form-group picture">
+            <label>Image</label>
+            <input
+              name="picture"
+              type="file"
+              className="form-control"
+              placeholder="Insérer une image"
+              value={picture}
+              onChange={handlePicture}
+            />
+          </div>
+
+          <div className="form-group video">
+            <label>Vidéo</label>
+            <input
+              name="video"
+              type="text"
+              className="form-control"
+              placeholder="Partager une vidéo"
+              value={video}
+              onChange={handleVideo}
+            />
+          </div>
+
+          <div className="button-forms d-grid gap-2 col-12 mx-auto">
+            <button
+              type="submit"
+              className="btn btn-outline-dark btn-extend-lg btn-block"
+            >
+              Poster
+            </button>
+          </div>
+        </form>
+      </div>
     </div>
   );
 }
