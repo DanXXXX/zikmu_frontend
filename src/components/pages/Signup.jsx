@@ -7,7 +7,7 @@ import axios from "axios";
 export default function SignUp() {
   const {
     // register,
-    handleSubmit,
+    // handleSubmit,
     formState: { errors },
   } = useForm();
 
@@ -67,7 +67,7 @@ export default function SignUp() {
     <div className="outer">
       <div className="inner">
         <div className="SignUpForm">
-          <form onSubmit={handleSubmit(onSubmit)}>
+          <form onSubmit={handleSubmit}>
             <h1>Sign Up</h1>
 
             <div className="form-group fullName">
@@ -133,6 +133,7 @@ export default function SignUp() {
                 onChange={handlePassword}
               />
             </div>
+
             <div className="form-group userPassword">
               <label>Confirm password</label>
               <input
@@ -144,6 +145,7 @@ export default function SignUp() {
                 onChange={handleConfirmPass}
               />
             </div>
+
             <div className="button-forms d-grid gap-2 col-12 mx-auto">
               <button
                 type="submit"
@@ -151,6 +153,9 @@ export default function SignUp() {
               >
                 Register
               </button>
+              <p className="text-right">
+                Déjà inscrit ? <a href="#login">S'identifier</a>
+              </p>
             </div>
           </form>
         </div>
