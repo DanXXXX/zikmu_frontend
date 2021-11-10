@@ -1,6 +1,6 @@
-import axios from 'axios'
-import React, { useState, useEffect } from 'react'
-import Post from '../Post';
+import axios from "axios";
+import React, { useState, useEffect } from "react";
+import Post from "../Post";
 
 export default function Actu() {
 
@@ -39,6 +39,3 @@ export default function Actu() {
 </div>
 )
 }
-           
-
-
