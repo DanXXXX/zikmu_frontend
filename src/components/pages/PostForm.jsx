@@ -77,7 +77,7 @@ export default function PostForm() {
 
           <div className="form-group postCategory">
             <label>
-              Catégorie
+              Catégories
               <select
                 name="category"
                 className="form-control"
