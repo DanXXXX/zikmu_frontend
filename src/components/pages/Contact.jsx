@@ -59,7 +59,7 @@ export default function Contact() {
       <form
         className="containerForm container py-5"
         id="contact-form"
-        onSubmit={handleSubmit(onSubmit)}
+        onSubmit={handleSubmit}
         method="POST"
       >
         <div className="form-group">
