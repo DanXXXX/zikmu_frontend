@@ -6,28 +6,28 @@ function Navbar(props) {
     <nav className="nana">
       <div class="icon-bar">
         <Link to="/">
-          <i className="fa fa-search">Home</i>
+          <i className="fa fa-home"></i>
         </Link>
         <Link to="/login">
-          <i class="fa fa-envelope">Login</i>
+          <i class="fa fa-globe"></i>
+
         </Link>
         <Link to="/signup">
-          <i class="fa fa-envelope">Sign up</i>
+          <i class="fa fa-globe"></i>
+
         </Link>
-        <Link to="/register">
-          <i class="">Register</i>
-        </Link>
+
         <Link to="/event" className="active">
-          <i class="fa fa-globe">Event</i>
+          <i class="fa fa-envelope"></i>
         </Link>
         <Link to="/admin">
-          <i class="fa fa-trash">Admin</i>
+          <i class="fa fa-trash"></i>
         </Link>
         <Link to="/conversation">
-          <i class="fa fa-trash">Conversation</i>
+          <i class="fa fa-trash"></i>
         </Link>
         <Link to="/contact">
-          <i class="fa fa-envelope">Contact</i>
+          <i class="fa fa-envelope"></i>
         </Link>
       </div>
     </nav>

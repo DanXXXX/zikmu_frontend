@@ -22,19 +22,21 @@ export default function Actu() {
 
     return (
         <div id="actu">
-            <ul>
+            <ul className="list-post">
             {data?.map((posts)=> {
                 console.log(posts);
                 return (
                     <>
                     <li><Post category={posts.category} message={posts.message} 
                     createdAt={posts.createdAt} likers={posts.likers.length} 
-                    comments={posts.comments} posterId={posts.posterId}/></li>
+                    comments={posts.comments} posterId={posts.posterId.surname}
+                    image={posts.posterId.image}/></li>
                     </>
                 )
             })
 }
 </ul>
+</div>
 )
 }
            
