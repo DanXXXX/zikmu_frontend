@@ -32,8 +32,11 @@ export default function Actu() {
                     comments={posts.comments} posterId={posts.posterId}/></li>
                     </>
                 )
-            })}
-            </ul>
-        </div>
-    )
+            })
 }
+</ul>
+)
+}
+           
+
+
