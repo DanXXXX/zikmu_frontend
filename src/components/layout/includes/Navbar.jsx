@@ -29,6 +29,9 @@ function Navbar(props) {
         <Link to="/contact">
           <i class="fa fa-envelope">Contact</i>
         </Link>
+        <Link to="/post/submit">
+          <i class="fa fa-envelope">+</i>
+        </Link>
       </div>
     </nav>
   );
