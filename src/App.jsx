@@ -13,6 +13,7 @@ import Error404 from "./components/pages/Error404";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.min.js.map";
 import "./styles/main.scss";
+import ListEvent from "./components/pages/ListEvent";
 
 function App() {
   return (
@@ -22,10 +23,11 @@ function App() {
         <div>
           <Switch>
             <Route exact path="/" component={Home} />
+            <Route path="/event" component={ListEvent} />
             <Route path="/Signup" component={Signup} />
-            <Route path="/Login" component={Login} />
-            <Route path="/Register" component={Register} />
-            <Route path="/Contact" component={Contact} />
+            <Route path="/login" component={Login} />
+            <Route path="/register" component={Register} />
+            <Route path="/contact" component={Contact} />
             <Route path="*" component={Error404} />
           </Switch>
         </div>
