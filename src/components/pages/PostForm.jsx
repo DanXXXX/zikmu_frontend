@@ -2,31 +2,38 @@ import react from "react";
 import { useForm } from "react-hook-form";
 import { useState } from "react";
 import axios from "axios";
+
 export default function PostForm() {
   const {
     formState: { errors },
   } = useForm();
 
-  const [posterId, setPosterId] = useState("");
-  const [message, setMessage] = useState("");
   const [picture, setPicture] = useState("");
   const [video, setVideo] = useState("");
+  const [category, setCategory] = useState("");
+  const [message, setMessage] = useState("");
 
-  const handleMessage = (e) => {
-    setMessage(e.target.value);
-  };
   const handlePicture = (e) => {
     setPicture(e.target.value);
   };
+
   const handleVideo = (e) => {
     setVideo(e.target.value);
+  };
+
+  const handleCategory = (e) => {
+    setCategory(e.target.value);
+  };
+
+  const handleMessage = (e) => {
+    setMessage(e.target.value);
   };
 
   const requestOptions = () => {
     axios({
       method: "POST",
       url: "http://localhost:4000/post/submit",
-      data: { message, picture, video },
+      data: { picture, video, message },
     }).then((response) => {
       if (response.data.status === "success") {
         alert("Post sent.");
@@ -43,17 +50,6 @@ export default function PostForm() {
       <div className="PostForm">
         <form onSubmit={requestOptions}>
           <h1>Post form</h1>
-          <div className="form-group message">
-            <label>Message</label>
-            <input
-              name="message"
-              type="text"
-              className="form-control"
-              placeholder="Message"
-              value={message}
-              onChange={handleMessage}
-            />
-          </div>
 
           <div className="form-group picture">
             <label>Image</label>
@@ -76,6 +72,36 @@ export default function PostForm() {
               placeholder="Partager une vidéo"
               value={video}
               onChange={handleVideo}
+            />
+          </div>
+
+          <div className="form-group postCategory">
+            <label>
+              Catégorie
+              <select
+                name="category"
+                className="form-control"
+                placeholder="Catégories"
+                value={category}
+                onChange={handleCategory}
+              >
+                <option value="Dance / Electro">Dance / Electro</option>
+                <option value="Pop / Rock">Pop / Rock</option>
+                <option value="Hiphop / RnB">Hiphop / Rnb</option>
+                <option value="Soul / Funk">Soul / Funk</option>
+              </select>
+            </label>
+          </div>
+
+          <div className="form-group message">
+            <label>Message</label>
+            <input
+              name="message"
+              type="text"
+              className="form-control"
+              placeholder="Message"
+              value={message}
+              onChange={handleMessage}
             />
           </div>
 
