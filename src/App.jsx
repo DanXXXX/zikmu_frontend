@@ -9,6 +9,7 @@ import Register from "./components/pages/Register";
 import SignUp from "./components/pages/Signup";
 import Login from "./components/pages/Login";
 import Contact from "./components/pages/Contact";
+import PostForm from "./components/pages/PostForm";
 import Error404 from "./components/pages/Error404";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.min.js.map";
@@ -21,19 +22,17 @@ function App() {
     <div>
       <BrowserRouter>
         <Header />
-        
-          <Switch>
 
-            <Route exact path="/" component={Actu} />
-            <Route path="/login" component={Login} />
-            <Route path="/register" component={Register} />
-            <Route path="/contact" component={Contact} />
-            <Route path="/event" component={ListEvent} />
-            <Route path="/signup" component={SignUp} />
-
-            <Route path="*" component={Error404} />
-          </Switch>
-        
+        <Switch>
+          <Route exact path="/" component={Actu} />
+          <Route path="/login" component={Login} />
+          <Route path="/register" component={Register} />
+          <Route path="/contact" component={Contact} />
+          <Route path="/event" component={ListEvent} />
+          <Route path="/post/submit" component={PostForm} />
+          <Route path="/signup" component={SignUp} />
+          <Route path="*" component={Error404} />
+        </Switch>
 
         <Footer />
       </BrowserRouter>
