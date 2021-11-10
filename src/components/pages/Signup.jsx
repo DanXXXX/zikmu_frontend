@@ -19,8 +19,8 @@ export default function SignUp() {
   const [status, setStatus] = useState("Submit");
 
   const handleSubmit = (e) => {
-    console.log("click on submit");
     e.preventDefault();
+    console.log("click on submit");
     setStatus("Sending...");
   };
 
@@ -50,10 +50,10 @@ export default function SignUp() {
     setConfirmPass(e.target.value);
   };
 
-  axios({
+const requestOptions = ()=>{ axios({
     method: "POST",
-    url: "http: localhost:4000/Signup",
-    data: { setData },
+    url: "http://localhost:4000/user/signup",
+    data: { fullName, surname, password, email, gender },
   }).then((response) => {
     if (response.data.status === "success") {
       alert("Registration sent.");
@@ -62,12 +62,15 @@ export default function SignUp() {
       alert("Registration failed to send. ");
     }
   });
+}
 
   return (
     <div className="outer">
       <div className="inner">
         <div className="SignUpForm">
-          <form onSubmit={handleSubmit}>
+    
+          <form onSubmit={requestOptions}>
+
             <h1>Sign Up</h1>
 
             <div className="form-group fullName">
@@ -110,14 +113,14 @@ export default function SignUp() {
               <label>
                 Sex
                 <select
-                  name="userGender"
+                  name="gender"
                   className="form-control"
                   placeholder="Sex"
                   value={gender}
                   onChange={handleGender}
                 >
-                  <option value="men">Homme</option>
-                  <option value="women">Femme</option>
+                  <option value="Homme">Homme</option>
+                  <option value="Femme">Femme</option>
                 </select>
               </label>
             </div>
