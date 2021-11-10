@@ -11,7 +11,10 @@ function Navbar(props) {
         <Link to="/login">
           <i class="fa fa-envelope">Login</i>
         </Link>
-        <Link to="/register">
+        <Link to="/Signup">
+          <i class="fa fa-envelope">Sign up</i>
+        </Link>
+        <Link to="/Register">
           <i class="">Register</i>
         </Link>
         <Link to="/event" className="active">
@@ -23,7 +26,10 @@ function Navbar(props) {
         <Link to="/conversation">
           <i class="fa fa-trash">Conversation</i>
         </Link>
-        <Link to="/contact">
+        <Link to="/Tchat">
+          <i class="fa fa-trash">chat</i>
+        </Link>
+        <Link to="/Contact">
           <i class="fa fa-envelope">Contact</i>
         </Link>
       </div>
