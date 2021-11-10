@@ -5,7 +5,7 @@ import axios from "axios";
 
 export default function SignUp() {
   const {
-    register,
+    // register,
     handleSubmit,
     formState: { errors },
   } = useForm();
@@ -66,7 +66,7 @@ export default function SignUp() {
     <div className="outer">
       <div className="inner">
         <div className="SignUpForm">
-          <form onSubmit={handleSubmit}>
+          <form onSubmit={handleSubmit(onSubmit)}>
             <h1>Sign Up</h1>
 
             <div className="form-group fullName">
@@ -111,7 +111,7 @@ export default function SignUp() {
                 <select
                   name="userGender"
                   className="form-control"
-                  placeholder="UserGender"
+                  placeholder="Sex"
                   value={gender}
                   onChange={handleGender}
                 >
