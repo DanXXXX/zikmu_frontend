@@ -4,11 +4,16 @@
 */
 
 // Définitions de mes couleurs 
-$yellow: #FFEC00;
+
 $black: rgb(28, 29, 31);
 $white: #F6F7F9;
 $red: rgb(201, 86, 86);
 $bleuFonce:  #1e4fd6;
+
+$back-color: #011B2A;
+$main-color: #FF3466;
+$white-color: #F4EAE7;
+$grey-color: #44535c;
 
 
 // Font-size
@@ -37,7 +42,6 @@ $font-family-quotes: ;
 
 // Attributions des couleurs
 // Colors
-$main-color: $yellow;
 $text-color: $black;
 $bg-color: $white;
 $bg-color-primary: $bleuFonce;

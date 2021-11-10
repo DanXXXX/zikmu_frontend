@@ -15,3 +15,28 @@
     height: 5vh;
     width: 13vw;
 }
+
+#like{
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+}
+
+.liker{
+    color: $grey-color;
+}
+
+.fa-heart{
+    padding: 10px;
+    color: $main-color;
+}
+
+.comment-list{
+    display: flex;
+    flex-flow: column;
+    color: $grey-color;
+}
+
+.post-msg{
+    padding: 15px;
+}

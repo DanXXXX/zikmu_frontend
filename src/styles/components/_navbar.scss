@@ -1,6 +1,6 @@
 .icon-bar {
   width: 100%;
-  background-color: #555;
+  background-color: $back-color;
   overflow: auto;
   position: fixed;
   bottom: 0%;
@@ -20,8 +20,10 @@
   background-color: #000;
 }
 
+
+
 .active {
-  background-color: #aa049c;
+  background-color: $main-color;
 }
 
 .nana {
