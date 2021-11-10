@@ -6,6 +6,7 @@ import Footer from "./components/layout/Footer";
 import Home from "./components/pages/Home";
 import Update from "./components/pages/admin/Update";
 import Register from "./components/pages/Register";
+import Signup from "./components/pages/Signup";
 import Login from "./components/pages/Login";
 import Contact from "./components/pages/Contact";
 import Error404 from "./components/pages/Error404";
@@ -13,6 +14,8 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.min.js.map";
 import "./styles/main.scss";
 import ListEvent from "./components/pages/ListEvent";
+import SignUp from "./components/pages/Signup";
+import Actu from "./components/pages/Actu";
 
 function App() {
   return (
@@ -21,11 +24,12 @@ function App() {
         <Header />
         <div>
           <Switch>
-            <Route exact path="/" component={Home} />
+            <Route exact path="/" component={Actu} />
             <Route path="/login" component={Login} />
             <Route path="/register" component={Register} />
             <Route path="/contact" component={Contact} />
             <Route path="/event" component={ListEvent} />
+            <Route path="/signup" component={SignUp} />
             <Route path="*" component={Error404} />
           </Switch>
         </div>
