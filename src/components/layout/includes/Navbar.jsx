@@ -30,9 +30,7 @@ function Navbar(props) {
         <Link to="/post/submit">
           <i class="fa fa-envelope">+</i>
         </Link>
-        <Link>
-          {" "}
-          to="/course/submit">
+        <Link to="/course/submit">
           <i class="fa fa-envelope">Cours</i>
         </Link>
       </div>
