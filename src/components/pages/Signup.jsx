@@ -2,6 +2,7 @@ import React from "react";
 import { useForm } from "react-hook-form";
 import { useState } from "react";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 export default function SignUp() {
   const {
@@ -148,13 +149,16 @@ export default function SignUp() {
             <div className="button-forms d-grid gap-2 col-12 mx-auto">
               <button
                 type="submit"
-                className="btn btn-outline-dark btn-extend-lg btn-block"
+                className="btn btn-outline-light btn-extend-lg btn-block"
               >
                 Register
               </button>
               <p className="text-right">
-                Déjà inscrit ? <a href="#login">S'identifier</a>
+                Déjà inscrit ? 
               </p>
+                <Link to="/login">
+                S'identifier
+                </Link>
             </div>
           </form>
         </div>
