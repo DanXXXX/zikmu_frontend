@@ -13,16 +13,18 @@
 .profil-post-picture{
     border-radius: 100%;
     height: 5vh;
-    width: 13vw;
+    width: 10vw;
 }
 
 #like{
     display: flex;
     flex-flow: row;
     align-items: center;
+    margin-top: 10px;
 }
 
 .liker{
+    padding-left: 20px;
     color: $grey-color;
 }
 

@@ -4,26 +4,23 @@ import { useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 
-
 export default function SignUp() {
   const {
-    // register,
-    // handleSubmit,
     formState: { errors },
   } = useForm();
 
-  const onSubmit = (data) => {
-    console.log(data);
-  };
+  // const onSubmit = (data) => {
+  //   console.log(data);
+  // }; a supprimer
 
   const [data, setData] = useState([]);
   const [status, setStatus] = useState("Submit");
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log("click on submit");
-    setStatus("Sending...");
-  };
+  // const handleSubmit = (e) => {
+  //   e.preventDefault();
+  //   console.log("click on submit");
+  //   setStatus("Sending...");
+  // };
 
   const [fullName, setFullName] = useState("");
   const [surname, setSurname] = useState("");
@@ -51,27 +48,26 @@ export default function SignUp() {
     setConfirmPass(e.target.value);
   };
 
-const requestOptions = ()=>{ axios({
-    method: "POST",
-    url: "http://localhost:4000/user/signup",
-    data: { fullName, surname, password, email, gender },
-  }).then((response) => {
-    if (response.data.status === "success") {
-      alert("Registration sent.");
-      this.restForm();
-    } else if (response.data.status === "fail") {
-      alert("Registration failed to send. ");
-    }
-  });
-}
+  const requestOptions = () => {
+    axios({
+      method: "POST",
+      url: "http://localhost:4000/user/signup",
+      data: { fullName, surname, password, email, gender },
+    }).then((response) => {
+      if (response.data.status === "success") {
+        alert("Registration sent.");
+        this.restForm();
+      } else if (response.data.status === "fail") {
+        alert("Registration failed to send. ");
+      }
+    });
+  };
 
   return (
     <div className="outer">
       <div className="inner">
         <div className="SignUpForm">
-    
           <form onSubmit={requestOptions}>
-
             <h1>Sign Up</h1>
 
             <div className="form-group fullName">
