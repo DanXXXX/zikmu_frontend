@@ -10,11 +10,9 @@ function Navbar(props) {
         </Link>
         <Link to="/login">
           <i class="fa fa-globe"></i>
-
         </Link>
         <Link to="/signup">
           <i class="fa fa-globe"></i>
-
         </Link>
 
         <Link to="/event" className="active">
@@ -31,6 +29,11 @@ function Navbar(props) {
         </Link>
         <Link to="/post/submit">
           <i class="fa fa-envelope">+</i>
+        </Link>
+        <Link>
+          {" "}
+          to="/course/submit">
+          <i class="fa fa-envelope">Cours</i>
         </Link>
       </div>
     </nav>

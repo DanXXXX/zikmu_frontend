@@ -16,6 +16,7 @@ import "bootstrap/dist/js/bootstrap.min.js.map";
 import "./styles/main.scss";
 import ListEvent from "./components/pages/ListEvent";
 import Actu from "./components/pages/Actu";
+import CourseForm from "./components/pages/CourseForm";
 
 function App() {
   return (
@@ -27,10 +28,11 @@ function App() {
           <Route exact path="/" component={Actu} />
           <Route path="/login" component={Login} />
           <Route path="/register" component={Register} />
+          <Route path="/signup" component={SignUp} />
           <Route path="/contact" component={Contact} />
           <Route path="/event" component={ListEvent} />
           <Route path="/post/submit" component={PostForm} />
-          <Route path="/signup" component={SignUp} />
+          <Route path="/course/submit" component={CourseForm} />
           <Route path="*" component={Error404} />
         </Switch>
 
