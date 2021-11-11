@@ -15,6 +15,7 @@ import "bootstrap/dist/js/bootstrap.min.js.map";
 import "./styles/main.scss";
 import ListEvent from "./components/pages/ListEvent";
 import Actu from "./components/pages/Actu";
+import Map from "./components/pages/Map";
 
 function App() {
   return (
@@ -25,12 +26,12 @@ function App() {
           <Switch>
 
             <Route exact path="/" component={Actu} />
-            <Route path="/login" component={Login} />
+            <Route exact path="/login" component={Login} />
             <Route path="/register" component={Register} />
             <Route path="/contact" component={Contact} />
             <Route path="/event" component={ListEvent} />
+            <Route path="/event/map" component={Map}/>
             <Route path="/signup" component={SignUp} />
-
             <Route path="*" component={Error404} />
           </Switch>
         
