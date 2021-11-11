@@ -1,6 +1,7 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 import { useState } from "react";
+import axios from "axios";
 
 export default function CourseForm() {
   const {
@@ -31,6 +32,21 @@ export default function CourseForm() {
 
   const hanldePrice = (e) => {
     setPrice(e.target.value);
+  };
+
+  const requestOptions = () => {
+    axios({
+      method: "POST",
+      url: "http://localhost:4000/post/submit",
+      data: { title, text, category, file, price },
+    }).then((response) => {
+      if (response.data.status === "success") {
+        alert("Course sent.");
+        this.restForm();
+      } else if (response.data.status === "fail") {
+        alert("Course failed to send. ");
+      }
+    });
   };
 
   return (
