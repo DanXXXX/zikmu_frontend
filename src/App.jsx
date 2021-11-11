@@ -32,7 +32,7 @@ function App() {
           <Route path="/contact" component={Contact} />
           <Route path="/event" component={ListEvent} />
           <Route path="/post/submit" component={PostForm} />
-          <Route path="/course/submit" component={CourseForm} />
+          <Route path="/post/submit" component={CourseForm} />
           <Route path="*" component={Error404} />
         </Switch>
 
