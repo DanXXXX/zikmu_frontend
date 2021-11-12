@@ -38,7 +38,7 @@ export default function MusicForm() {
       <h1 className="title">Poster un son</h1>
 
       <div className="MusicForm">
-        <form>
+        <form onSubmit={requestOptions}>
           <h1>Music form</h1>
 
           <div className="form-group musicName">
