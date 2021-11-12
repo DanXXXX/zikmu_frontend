@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet'
 import axios from "axios"
+import ReactModal from 'react-modal'
 
 export default function LocationMarker() {
 
@@ -14,9 +15,10 @@ export default function LocationMarker() {
             .catch((err) => console.log(err));
     }, []);
     const LocationMarker = () => {
+        console.log("marker");
         return locations === []
             ? null
-            : locations.map((location) => (
+            : locations?.map((location) => (
                 <Marker
                     position={[
                         location.coordinates.lat || 40.0,
@@ -39,16 +41,21 @@ export default function LocationMarker() {
                 zoom={5}
                 scrollWheelZoom={true}
             >
-                {/* <TileLayer
+                <TileLayer
                     attribution='&copy; <a href="https://api.maptiler.com/maps/topo/tiles.json?key=6VtA7Ctgi6GFUAkKgZPz'
                     url="https://api.maptiler.com/maps/topo/{z}/{x}/{y}.png?key=6VtA7Ctgi6GFUAkKgZPz"
-                /> */}
+                />
                 {LocationMarker()}
             </MapContainer>
             <p className="map-description">
-                <span>{locations.length}</span> places Found, Login to see the
+                <span>{locations?.length}</span> places Found, Login to see the
                 details
             </p>
+
+            <ReactModal
+                isOpen={
+                    false
+                } />
         </div>
     );
 }

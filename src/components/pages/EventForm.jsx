@@ -94,8 +94,10 @@ export default function EventForm() {
                 <option value="Concerts">Concert</option>
                 <option value="Festival">Festival</option>
                 <option value="Savoirs pratiques">Savoirs pratiques</option>
+                <option value="Street-Dance">Street-Dance</option>
                 <option value="Opéra">Opéra</option>
                 <option value="Autre">Autre...</option>
+                
               </select>
             </label>
           </div>
@@ -104,7 +106,7 @@ export default function EventForm() {
             <label>Programation</label>
             <input
               name="file"
-              type="text"
+              type="file"
               className="form-control"
               placeholder="Lien vers l'évènement"
               value={file}

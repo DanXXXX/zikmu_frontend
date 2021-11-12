@@ -31,7 +31,7 @@ function App() {
           <Route path="/login" component={Login} />
           <Route path="/signup" component={SignUp} />
           <Route path="/contact" component={Contact} />
-          <Route path="/event" component={ListEvent} />
+          <Route exact path="/event" component={ListEvent} />
           <Route path="/event/map" component={Map} />
           <Route path="/event/submit" component={EventForm} />
           <Route path="/post/submit" component={PostForm} />

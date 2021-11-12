@@ -1,6 +1,8 @@
 import axios from "axios";
 import React, { useState, useEffect } from "react";
 import Post from "../Post";
+import SoundBar from "../SoundBar";
+
 
 export default function Actu() {
 
@@ -36,6 +38,7 @@ export default function Actu() {
             })
 }
 </ul>
+<SoundBar/>
 </div>
 )
 }
