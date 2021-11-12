@@ -30,7 +30,7 @@ function App() {
           <Route path="/login" component={Login} />
           <Route path="/signup" component={SignUp} />
           <Route path="/contact" component={Contact} />
-          <Route path="/event" component={ListEvent} />
+          <Route exact path="/event" component={ListEvent} />
           <Route path="/event/map" component={Map}/>
           <Route path="/post/submit" component={PostForm} />
           <Route path="/course/submit" component={CourseForm} />
