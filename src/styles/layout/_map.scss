@@ -3,7 +3,6 @@
     width: 100vw;
 }
 .map-container-set{
-    
     height: 35vh;
     width: 85vw;
 }
@@ -11,4 +10,7 @@
 #set-map{
     display: flex;
     justify-content: center;
+    padding-bottom: 100px;
+    padding-top: 50px;
+    z-index: 1;
 }
