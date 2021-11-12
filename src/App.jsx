@@ -10,6 +10,7 @@ import SignUp from "./components/pages/Signup";
 import Login from "./components/pages/Login";
 import Contact from "./components/pages/Contact";
 import PostForm from "./components/pages/PostForm";
+import EventForm from "./components/pages/EventForm";
 import Error404 from "./components/pages/Error404";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.min.js.map";
@@ -31,7 +32,8 @@ function App() {
           <Route path="/signup" component={SignUp} />
           <Route path="/contact" component={Contact} />
           <Route exact path="/event" component={ListEvent} />
-          <Route path="/event/map" component={Map}/>
+          <Route path="/event/map" component={Map} />
+          <Route path="/event/submit" component={EventForm} />
           <Route path="/post/submit" component={PostForm} />
           <Route path="/course/submit" component={CourseForm} />
           <Route path="*" component={Error404} />

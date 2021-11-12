@@ -15,6 +15,7 @@ export default function LocationMarker() {
             .catch((err) => console.log(err));
     }, []);
     const LocationMarker = () => {
+        console.log("marker");
         return locations === []
             ? null
             : locations?.map((location) => (
