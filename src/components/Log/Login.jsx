@@ -12,7 +12,7 @@ function Login() {
     const passwordError = document.querySelector(".password.error");
 
     axios({
-      method: "POST",
+      method: "post",
       url: `http://localhost:4000/user/login`,
       data: {
         email,
@@ -42,7 +42,10 @@ function Login() {
           name="email"
           id="email"
           placeholder="email..."
-          onChange={(e) => setEmail(e.target.value)}
+          onChange={(e) => {
+            console.log(e.target.value);
+            setEmail(e.target.value);
+          }}
           value={email}
         />
         <div className="email error"></div>

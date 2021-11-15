@@ -22,6 +22,7 @@ const App = () => {
         url: `http://localhost:4000/jwtid`,
       })
         .then((res) => {
+          console.log(res.data.locals);
           setUid(res.data);
         })
         .catch((err) => console.log("No token"));
