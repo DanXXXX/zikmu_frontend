@@ -9,7 +9,7 @@ export default function UserProfile(props) {
   const apiUrl = "http://localhost:4000";
 
   useEffect(() => {
-    fetch(apiUrl + "/users/" + id)
+    fetch(apiUrl + "/user/" + id)
       .then((res) => res.json())
       .then((data) => setUser(data));
   }, []);
@@ -33,10 +33,7 @@ export default function UserProfile(props) {
         <h1>Profil</h1>
         <div className="userDashboard">
           <div className="avatar">
-            <img
-              src={apiUrl + image + _id}
-              alt={`${fullName}profile picture`}
-            />
+            <img src={apiUrl + image + _id} alt={`${fullName}profile`} />
           </div>
           <div className="fullName">
             <h2>{fullName}</h2>

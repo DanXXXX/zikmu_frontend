@@ -33,6 +33,9 @@ function Navbar(props) {
         <Link to="/course/submit">
           <i class="fa fa-envelope">Cours</i>
         </Link>
+        <Link to="/user/profil">
+          <i class="fa fa-user">Profil</i>
+        </Link>
       </div>
     </nav>
   );
