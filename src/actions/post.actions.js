@@ -23,7 +23,7 @@ export const GET_POST_ERRORS = "GET_POST_ERRORS";
 export const getPosts = (num) => {
     return (dispatch) => {
         return axios
-            .get(`http://localhost:4000/post/`)
+            .get(`http://localhost:4000/post/all`)
             .then((res) => {
                 const array = res.data.slice(0, num);
                 dispatch({ type: GET_POSTS, payload: array });
@@ -36,7 +36,7 @@ export const getPosts = (num) => {
 export const addPost = (data) => {
     return (dispatch) => {
         return axios
-            .post(`http://localhost:4000/post/`, data)
+            .post(`http://localhost:4000/post/submit`, data)
             .then((res) => {
                 if (res.data.errors) {
                     dispatch({ type: GET_POST_ERRORS, payload: res.data.errors });

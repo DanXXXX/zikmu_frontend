@@ -1,18 +1,12 @@
 import axios from "axios";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
+import { UidContext } from "../components/AppContext";
 import Post from "../components/Post";
 import SoundBar from "../components/SoundBar";
 
 export default function Actu() {
   const [data, setData] = useState([]);
   const baseUrl = "http://localhost:4000";
-
-  useEffect(() => {
-    axios.get(`${baseUrl}/post/all`).then((res) => {
-      console.log(res.data);
-      setData(res.data);
-    });
-  }, []);
 
   return (
     <div id="actu">

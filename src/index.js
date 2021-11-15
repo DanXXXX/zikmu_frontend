@@ -10,10 +10,15 @@ import thunk from 'redux-thunk'
 import logger from 'redux-logger'
 import rootReducer from './pages/reducers'
 import { BrowserRouter } from 'react-router-dom';
+import { getUsers } from './actions/users.actions';
+import { getPosts } from './actions/post.actions';
 
 const store = createStore(
   rootReducer, composeWithDevTools(applyMiddleware(thunk, logger))
 )
+
+store.dispatch(getUsers());
+store.dispatch(getPosts());
 
 ReactDOM.render(
   <BrowserRouter>

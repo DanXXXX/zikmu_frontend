@@ -12,22 +12,24 @@ import PostForm from '../../pages/PostForm'
 import Signup from '../Log/Signup'
 import UserProfile from '../../pages/UserProfile'
 import Map from '../../pages/Map.jsx'
+import Home from '../../pages/Home'
+import Profil from '../../pages/Profil'
+import Log from '../Log'
+import NewPostForm from '../Post/NewPostForm'
 
 export default function index() {
     return (
         <div>
             <Switch>
-                <Route exact path="/" component={Actu} />
-                <Route path="/login" component={Login} />
-                <Route path="/signup" component={Signup} />
+                <Route exact path="/" component={Home} />
+                <Route path='/register' component={Log} />
                 <Route path="/contact" component={Contact} />
                 <Route exact path="/event" component={ListEvent} />
-                <Route path="/event/map" component={Map} />
                 <Route path="/event/submit" component={EventForm} />
-                <Route path="/post/submit" component={PostForm} />
+                <Route path="/post/submit" component={NewPostForm} />
                 <Route path="/course/submit" component={CourseForm} />
                 <Route path="/songs/submit" component={MusicForm} />
-                <Route exact path="/user/profil" component={UserProfile} />
+                <Route exact path="/user/profil" component={Profil} />
                 <Route path="*" component={Error404} />
             </Switch>
         </div>
