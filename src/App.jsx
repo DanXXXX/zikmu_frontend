@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useContext } from "react";
+import axios from "axios";
 //import { UserContext } from "../App.js";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Header from "./components/layout/Header";
@@ -20,8 +21,13 @@ import ListEvent from "./components/pages/ListEvent";
 import Actu from "./components/pages/Actu";
 import Map from "./components/pages/Map";
 import CourseForm from "./components/pages/CourseForm";
+import UserProfile from "./components/pages/UserProfile";
 
 function App() {
+  const [id, setId] = useState({});
+
+  axios.get("http://localhost:4000/user");
+
   return (
     <div>
       <BrowserRouter>
@@ -38,6 +44,7 @@ function App() {
           <Route path="/post/submit" component={PostForm} />
           <Route path="/course/submit" component={CourseForm} />
           <Route path="/songs/submit" component={MusicForm} />
+          <Route path="/user/profil" component={UserProfile} />
           <Route path="*" component={Error404} />
         </Switch>
 
