@@ -7,19 +7,36 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.min.js.map";
 import "./styles/main.scss";
 import Routes from "./components/Routes";
+import { UidContext } from "./components/AppContext";
+import { useDispatch } from "react-redux";
+import { getUser } from "./actions/user.actions";
 
-function App() {
-  const [id, setId] = useState({});
+const App = () => {
+  const [uid, setUid] = useState(null);
+  const dispatch = useDispatch();
 
-  axios.get("http://localhost:4000/user");
+  useEffect(() => {
+    const fetchToken = async () => {
+      await axios({
+        method: "get",
+        url: `http://localhost:4000/jwtid`,
+      })
+        .then((res) => {
+          setUid(res.data);
+        })
+        .catch((err) => console.log("No token"));
+    };
+    fetchToken();
+
+    if (uid) dispatch(getUser(uid));
+  }, [uid, dispatch]);
 
   return (
-    <div>
-      <Header />
+    <UidContext.Provider value={uid}>
       <Routes />
       <Footer />
-    </div>
+    </UidContext.Provider>
   );
-}
+};
 
 export default App;

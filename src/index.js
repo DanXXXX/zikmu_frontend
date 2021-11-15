@@ -8,19 +8,22 @@ import { createStore, applyMiddleware } from 'redux'
 import { composeWithDevTools } from 'redux-devtools-extension'
 import thunk from 'redux-thunk'
 import logger from 'redux-logger'
-import rootReducer from './reducers'
+import rootReducer from './pages/reducers'
+import { BrowserRouter } from 'react-router-dom';
 
 const store = createStore(
   rootReducer, composeWithDevTools(applyMiddleware(thunk, logger))
 )
 
 ReactDOM.render(
-  < Provider store={store} >
-    <React.StrictMode>
-      <App />
-    </React.StrictMode>
+  <BrowserRouter>
+    < Provider store={store} >
+      <React.StrictMode>
+        <App />
+      </React.StrictMode>
 
-  </Provider >,
+    </Provider >
+  </BrowserRouter>,
   document.getElementById('root')
 )
 reportWebVitals();
