@@ -39,6 +39,7 @@ const Card = ({ post }) => {
                 !isEmpty(usersData[0]) &&
                 usersData
                   .map((user) => {
+                    console.log(user);
                     if (user._id === post.posterId) return user.image;
                     else return null;
                   })
@@ -54,7 +55,7 @@ const Card = ({ post }) => {
                   {!isEmpty(usersData[0]) &&
                     usersData
                       .map((user) => {
-                        console.log("USER <<<<<<<<", user);
+                        console.log("USER <<<<<<<<", user.image);
                         if (user._id === post.posterId) return user.surname;
                         else return null;
                       })
