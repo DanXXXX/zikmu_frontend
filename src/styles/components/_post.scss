@@ -62,3 +62,30 @@
 .unlike-icon {
   height: 4vh;
 }
+
+.poster-pic {
+  height: 4vh;
+  border-radius: 20px;
+}
+
+.card-surname {
+  display: flex;
+  flex-flow: row;
+  justify-content: space-around;
+}
+
+.card-header {
+  display: flex;
+  flex-flow: row nowrap;
+}
+
+.card-container {
+  display: flex;
+  flex-flow: column;
+  margin: 10px;
+  border-top: lightgray solid 1px;
+}
+
+.commenter-pic {
+  height: 4vh;
+}
