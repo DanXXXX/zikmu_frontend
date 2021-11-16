@@ -31,7 +31,7 @@ export const uploadPicture = (data, id) => {
                     return axios
                         .get(`http://localhost:4000/user/${id}`)
                         .then((res) => {
-                            dispatch({ type: UPLOAD_PICTURE, payload: res.data.picture });
+                            dispatch({ type: UPLOAD_PICTURE, payload: res.data.image });
                         });
                 }
             })

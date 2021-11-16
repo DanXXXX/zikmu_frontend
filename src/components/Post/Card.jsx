@@ -39,6 +39,7 @@ const Card = ({ post }) => {
                 !isEmpty(usersData[0]) &&
                 usersData
                   .map((user) => {
+                    console.log(user);
                     if (user._id === post.posterId) return user.image;
                     else return null;
                   })
@@ -54,7 +55,7 @@ const Card = ({ post }) => {
                   {!isEmpty(usersData[0]) &&
                     usersData
                       .map((user) => {
-                        console.log("USER <<<<<<<<", user);
+                        console.log("USER <<<<<<<<", user.image);
                         if (user._id === post.posterId) return user.surname;
                         else return null;
                       })
@@ -73,6 +74,7 @@ const Card = ({ post }) => {
                   defaultValue={post.message}
                   onChange={(e) => setTextUpdate(e.target.value)}
                 />
+
                 <div className="button-container">
                   <button className="btn" onClick={updateItem}>
                     Valider modification
@@ -105,6 +107,7 @@ const Card = ({ post }) => {
             <div className="card-footer">
               <div className="comment-icon">
                 <img
+                  className="comment-icon"
                   onClick={() => setShowComments(!showComments)}
                   src="./image/icons/message1.svg"
                   alt="comment"
@@ -112,7 +115,11 @@ const Card = ({ post }) => {
                 <span>{post.comments.length}</span>
               </div>
               <LikeButton post={post} />
-              <img src="./image/icons/share.svg" alt="share" />
+              <img
+                src="./image/icons/share.svg"
+                alt="share"
+                className="share-icon"
+              />
             </div>
             {showComments && <CardComments post={post} />}
           </div>

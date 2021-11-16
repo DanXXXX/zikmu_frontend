@@ -17,7 +17,7 @@ const CardComments = ({ post }) => {
     if (text) {
       dispatch(addComment(post._id, userData._id, text, userData.pseudo))
         .then(() => dispatch(getPosts()))
-        .then(() => setText(''));
+        .then(() => setText(""));
     }
   };
 
@@ -39,7 +39,7 @@ const CardComments = ({ post }) => {
                   !isEmpty(usersData[0]) &&
                   usersData
                     .map((user) => {
-                      if (user._id === comment.commenterId) return user.picture;
+                      if (user._id === comment.commenterId) return user.image;
                       else return null;
                     })
                     .join("")
