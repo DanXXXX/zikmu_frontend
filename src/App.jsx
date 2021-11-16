@@ -12,17 +12,21 @@ import { useDispatch } from "react-redux";
 import { getUser } from "./actions/user.actions";
 
 const App = () => {
-  const [uid, setUid] = useState(null);
+  const [uid, setUid] = useState("");
   const dispatch = useDispatch();
 
   useEffect(() => {
+    console.log("useeffect");
     const fetchToken = async () => {
       await axios({
         method: "get",
-        url: `http://localhost:4000/jwtid`,
+        url: `/jwtid`,
       })
         .then((res) => {
-          console.log(res.data.locals);
+          console.log(
+            res.data,
+            "<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< DATA"
+          );
           setUid(res.data);
         })
         .catch((err) => console.log("No token"));

@@ -16,6 +16,7 @@ import Home from '../../pages/Home'
 import Profil from '../../pages/Profil'
 import Log from '../Log'
 import NewPostForm from '../Post/NewPostForm'
+import Logout from '../Log/Logout'
 
 export default function index() {
     return (
@@ -30,6 +31,7 @@ export default function index() {
                 <Route path="/course/submit" component={CourseForm} />
                 <Route path="/songs/submit" component={MusicForm} />
                 <Route exact path="/user/profil" component={Profil} />
+                <Route exact path="/user/logout" component={Logout} />
                 <Route path="*" component={Error404} />
             </Switch>
         </div>
