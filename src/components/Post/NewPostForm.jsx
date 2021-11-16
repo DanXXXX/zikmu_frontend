@@ -84,7 +84,7 @@ const NewPostForm = () => {
           </div>
           <NavLink exact to="/profil">
             <div className="user-info">
-              <img src={userData.picture} alt="user-img" />
+              <img src={userData.image} alt="user-img" />
             </div>
           </NavLink>
           <div className="post-form">
@@ -103,7 +103,7 @@ const NewPostForm = () => {
                 <div className="card-right">
                   <div className="card-header">
                     <div className="pseudo">
-                      <h3>{userData.pseudo}</h3>
+                      <h3>{userData.surname}</h3>
                     </div>
                     <span>{timestampParser(Date.now())}</span>
                   </div>

@@ -13,6 +13,7 @@ export const getUser = (uid) => {
         return axios
             .get(`http://localhost:4000/user/${uid}`)
             .then((res) => {
+                console.log(res)
                 dispatch({ type: GET_USER, payload: res.data });
             })
             .catch((err) => console.log(err));
@@ -57,7 +58,7 @@ export const followUser = (followerId, idToFollow) => {
     return (dispatch) => {
         return axios({
             method: "patch",
-            url: `http://localhost:4000/user/follow/` + followerId,
+            url: `/user/follow/` + followerId,
             data: { idToFollow },
         })
             .then((res) => {
