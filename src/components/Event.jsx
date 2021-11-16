@@ -15,7 +15,6 @@ export default function Event({
       <h3>{title}</h3>
       <p>{text}</p>
       <h5>{category}</h5>
-      <p>{location}</p>
       <p>
         {coordinates?.lat}
         {coordinates?.lng}
