@@ -7,6 +7,7 @@ export default function UserProfile(props) {
   const [user, setUser] = useState([]);
   const id = props.match.params.id;
   const apiUrl = "http://localhost:4000";
+  // const isLogged
 
   useEffect(() => {
     fetch(apiUrl + "/user/" + id)
