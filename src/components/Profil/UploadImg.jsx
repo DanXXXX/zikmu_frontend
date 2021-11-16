@@ -10,7 +10,7 @@ const UploadImg = () => {
   const handlePicture = (e) => {
     e.preventDefault();
     const data = new FormData();
-    data.append("name", userData.pseudo);
+    data.append("name", userData.surname);
     data.append("userId", userData._id);
     data.append("file", file);
 
@@ -27,7 +27,7 @@ const UploadImg = () => {
         accept=".jpg, .jpeg, .png"
         onChange={(e) => setFile(e.target.files[0])}
       />
-      <br/>
+      <br />
       <input type="submit" value="Envoyer" />
     </form>
   );

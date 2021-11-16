@@ -1,44 +1,64 @@
-#post{
-    border-bottom:  solid 1px lightgray;
-    padding: 15px;
+#post {
+  border-bottom: solid 1px lightgray;
+  padding: 15px;
 }
 
-#user-post{
-    display: flex;
-    flex-flow: row;
-    justify-content: space-around;
-    align-items: center;
+#user-post {
+  display: flex;
+  flex-flow: row;
+  justify-content: space-around;
+  align-items: center;
 }
 
-.profil-post-picture{
-    border-radius: 100%;
-    height: 5vh;
-    width: 10vw;
+.profil-post-picture {
+  border-radius: 100%;
+  height: 5vh;
+  width: 10vw;
 }
 
-#like{
-    display: flex;
-    flex-flow: row;
-    align-items: center;
-    margin-top: 10px;
+#like {
+  display: flex;
+  flex-flow: row;
+  align-items: center;
+  margin-top: 10px;
 }
 
-.liker{
-    padding-left: 20px;
-    color: $grey-color;
+.liker {
+  padding-left: 20px;
+  color: $grey-color;
 }
 
-.fa-heart{
-    padding: 10px;
-    color: $main-color;
+.fa-heart {
+  padding: 10px;
+  color: $main-color;
 }
 
-.comment-list{
-    display: flex;
-    flex-flow: column;
-    color: $grey-color;
+.comment-list {
+  display: flex;
+  flex-flow: column;
+  color: $grey-color;
 }
 
-.post-msg{
-    padding: 15px;
+.post-msg {
+  padding: 15px;
+}
+
+.card-footer {
+  display: flex;
+  flex-flow: row;
+  justify-content: space-around;
+}
+
+.comment-icon {
+  height: 4vh;
+}
+
+.share-icon {
+  height: 4vh;
+}
+.like-icon {
+  height: 4vh;
+}
+.unlike-icon {
+  height: 4vh;
 }

@@ -13,19 +13,22 @@ function Login() {
 
     axios({
       method: "post",
-      url: `http://localhost:4000/user/login`,
+      url: `/user/login`,
       data: {
         email,
         password,
       },
     })
       .then((res) => {
-        console.log(res);
+        console.log(res.jwt);
+        console.log(res.cookie);
+        // debugger;
         if (res.data.errors) {
           emailError.innerHTML = res.data.errors.email;
           passwordError.innerHTML = res.data.errors.password;
         } else {
           window.location = "/";
+          console.log("itsok");
         }
       })
       .catch((err) => {
@@ -58,7 +61,8 @@ function Login() {
           value={password}
         />
         <div className="password error"></div>
-        <input type="submit" value="Login" />
+        {/* <input type="submit" value="Login" /> */}
+        <button type="submit">Login</button>
       </form>
     </div>
   );

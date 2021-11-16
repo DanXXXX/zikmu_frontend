@@ -31,7 +31,7 @@ const Trends = () => {
               return (
                 <li key={post._id}>
                   <div>
-                    {post.picture && <img src={post.picture} alt="post-pic" />}
+                    {post.image && <img src={post.image} alt="post-pic" />}
                     {post.video && (
                       <iframe
                         src={post.video}
@@ -41,12 +41,13 @@ const Trends = () => {
                         title={post._id}
                       ></iframe>
                     )}
-                    {isEmpty(post.picture) && isEmpty(post.video) && (
+                    {isEmpty(post.image) && isEmpty(post.video) && (
                       <img
                         src={
                           usersData[0] &&
                           usersData
                             .map((user) => {
+                              console.log("userTrend", user);
                               if (user._id === post.posterId) {
                                 return user.image;
                               } else return null;
