@@ -1,5 +1,15 @@
-#event{
-    border: solid 1px lightgray;
-    width: 50vw;
-    height: 30vh;
+#event {
+  // border: solid 1px lightgray;
+  width: 50vw;
+  height: 30vh;
+}
+
+.divider {
+  display: block;
+  width: 100vw;
+  height: 2px;
+  background-color: #262626;
+  border: none;
+  box-sizing: content-box;
+  margin: 5px auto;
 }
