@@ -9,13 +9,11 @@
 // }
 
 .header {
-    // background-image: url(../../../public/image/zikmu/wave2.png);
-    height: 10vh;
-    width: 100vw;
-    background-color: $main-color;
-    position: fixed;
-    padding-bottom: 8rem;
-    top: 0;
-    
-
+  // background-image: url(../../../public/image/zikmu/wave2.png);
+  height: 5vh;
+  width: 100vw;
+  background-color: $main-color;
+  position: fixed;
+  margin-bottom: 30px;
+  top: 0;
 }

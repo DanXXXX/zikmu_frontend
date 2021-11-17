@@ -26,7 +26,7 @@ const Card = ({ post }) => {
   useEffect(() => {
     !isEmpty(usersData[0]) && setIsLoading(false);
   }, [usersData]);
-
+  console.log(post);
   return (
     <li className="card-container" key={post._id}>
       {isLoading ? (
@@ -87,9 +87,14 @@ const Card = ({ post }) => {
               </div>
             </div>
           )}
-          {post.image && (
-            <image src={post.image} alt="card-pic" className="card-pic" />
+          {post.file && (
+            <img
+              src={"http://localhost:4000" + post.file}
+              alt="card-pic"
+              className="card-pic"
+            />
           )}
+          {/* http://localhost:4000/image/zikmu/guitar-756326_6401637145215173.jpg */}
           {post.video && (
             <iframe
               width="500"
