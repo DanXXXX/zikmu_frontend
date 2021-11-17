@@ -50,12 +50,13 @@ const FriendsHint = () => {
         <ul className="friend-hint">
           {friendsHint &&
             friendsHint.map((user) => {
+              console.log(userData);
               for (let i = 0; i < usersData.length; i++) {
                 if (user === usersData[i]._id) {
                   return (
                     <li className="user-hint" key={user}>
                       <img
-                        src={usersData[i].image + ".png"}
+                        src={usersData[i].image}
                         alt="user-pic"
                         className="user-pic"
                       />

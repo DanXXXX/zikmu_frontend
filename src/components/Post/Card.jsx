@@ -39,11 +39,13 @@ const Card = ({ post }) => {
                 !isEmpty(usersData[0]) &&
                 usersData
                   .map((user) => {
-                    console.log(user);
-                    console.log(post);
-                    if (user.surname === post.posterId.surname)
-                      return user.image;
-                    else return null;
+                    console.log(user._id);
+                    console.log(post.posterId, "<<<<<<<<POST");
+                    // console.log(post);
+                    if (user._id === post.posterId._id)
+                      return `http://localhost:4000${user.image}`;
+                    else
+                      return null; /*"http://localhost:4000/uploads/profil/random-user.png";*/
                   })
                   .join("")
               }
@@ -89,7 +91,7 @@ const Card = ({ post }) => {
           )}
           {post.file && (
             <img
-              src={"http://localhost:4000" + post.file}
+              src={"http://localhost:4000/" + post.file}
               alt="card-pic"
               className="card-pic"
             />

@@ -146,11 +146,3 @@ export default function Signup() {
     </>
   );
 }
-// {/* <input
-//       type="text"
-//       name="gender"
-//       placeholder="gender"
-//       id="gender"
-//       onChange={(e) => setGender(e.target.value)}
-//       value={gender}
-//     /> */}

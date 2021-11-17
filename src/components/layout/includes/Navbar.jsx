@@ -13,7 +13,7 @@ function Navbar(props) {
           <i class="fa fa-envelope"></i>
         </Link>
 
-        <Link to="/post/submit">
+        <Link to="/event/submit">
           <i class="fa fa-envelope">+</i>
         </Link>
         <Link to="/conversation">

@@ -26,7 +26,11 @@ const UpdateProfil = () => {
       <div className="update-container">
         <div className="left-part">
           <h3>Photo de profil</h3>
-          <img src={userData.picture} alt="user-pic" />
+          <img
+            className="user-pic-profil"
+            src={`http://localhost:4000${userData.image}`}
+            alt="user-pic"
+          />
           <UploadImg />
           <p>{error.maxSize}</p>
           <p>{error.format}</p>
@@ -75,8 +79,12 @@ const UpdateProfil = () => {
                   if (user._id === userData.following[i]) {
                     return (
                       <li key={user._id}>
-                        <img src={user.picture} alt="user-pic" />
-                        <h4>{user.pseudo}</h4>
+                        <img
+                          src={`http://localhost:4000${user.image}`}
+                          alt="user-pic"
+                          className="user-pic"
+                        />
+                        <h4>{user.surname}</h4>
                         <div className="follow-handler">
                           <FollowHandler
                             idToFollow={user._id}
