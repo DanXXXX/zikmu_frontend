@@ -37,13 +37,14 @@ function Login() {
   };
 
   return (
-    <div>
-      <h1>Incrivez-vous</h1>
-      <form action="" onSubmit={handleLogin}>
+    <div className="login" >
+      <h2 className="login__title" >Connectez-vous</h2>
+      <form action="" onSubmit={handleLogin} className="form" >
         <input
           type="text"
           name="email"
           id="email"
+          className="email"
           placeholder="email..."
           onChange={(e) => {
             console.log(e.target.value);
@@ -56,13 +57,14 @@ function Login() {
           type="password"
           name="password"
           id="password"
+          className="password"
           placeholder="password..."
           onChange={(e) => setPassword(e.target.value)}
           value={password}
         />
         <div className="password error"></div>
         {/* <input type="submit" value="Login" /> */}
-        <button type="submit">Login</button>
+        <button type="submit" className="btn" >Login</button>
       </form>
     </div>
   );
