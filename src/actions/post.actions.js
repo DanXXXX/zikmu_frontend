@@ -23,7 +23,7 @@ export const GET_POST_ERRORS = "GET_POST_ERRORS";
 export const getPosts = (num) => {
     return (dispatch) => {
         return axios
-            .get(`http://localhost:4000/post/all`)
+            .get(`/post/all`)
             .then((res) => {
                 const array = res.data.slice(0, num);
                 dispatch({ type: GET_POSTS, payload: array });
@@ -36,7 +36,7 @@ export const getPosts = (num) => {
 export const addPost = (data) => {
     return (dispatch) => {
         return axios
-            .post(`http://localhost:4000/post/submit`, data)
+            .post(`/post/submit`, data)
             .then((res) => {
                 if (res.data.errors) {
                     dispatch({ type: GET_POST_ERRORS, payload: res.data.errors });
@@ -51,7 +51,7 @@ export const likePost = (postId, userId) => {
     return (dispatch) => {
         return axios({
             method: "patch",
-            url: `http://localhost:4000/post/like-post/` + postId,
+            url: `/post/like-post/` + postId,
             data: { id: userId },
         })
             .then((res) => {
@@ -65,7 +65,7 @@ export const unlikePost = (postId, userId) => {
     return (dispatch) => {
         return axios({
             method: "patch",
-            url: `http://localhost:4000/post/unlike-post/` + postId,
+            url: `/post/unlike-post/` + postId,
             data: { id: userId },
         })
             .then((res) => {
@@ -79,7 +79,7 @@ export const updatePost = (postId, message) => {
     return (dispatch) => {
         return axios({
             method: "put",
-            url: `http://localhost:4000/post/${postId}`,
+            url: `/post/${postId}`,
             data: { message },
         })
             .then((res) => {
@@ -93,7 +93,7 @@ export const deletePost = (postId) => {
     return (dispatch) => {
         return axios({
             method: "delete",
-            url: `http://localhost:4000/post/${postId}`,
+            url: `/post/${postId}`,
         })
             .then((res) => {
                 dispatch({ type: DELETE_POST, payload: { postId } });
@@ -106,7 +106,7 @@ export const addComment = (postId, commenterId, text, commenterPseudo) => {
     return (dispatch) => {
         return axios({
             method: "patch",
-            url: `http://localhost:4000/post/comment-post/${postId}`,
+            url: `/post/comment-post/${postId}`,
             data: { commenterId, text, commenterPseudo },
         })
             .then((res) => {
@@ -120,7 +120,7 @@ export const editComment = (postId, commentId, text) => {
     return (dispatch) => {
         return axios({
             method: "patch",
-            url: `http://localhost:4000/post/edit-comment-post/${postId}`,
+            url: `/post/edit-comment-post/${postId}`,
             data: { commentId, text },
         })
             .then((res) => {
@@ -134,7 +134,7 @@ export const deleteComment = (postId, commentId) => {
     return (dispatch) => {
         return axios({
             method: "patch",
-            url: `http://localhost:4000/post/delete-comment-post/${postId}`,
+            url: `/post/delete-comment-post/${postId}`,
             data: { commentId },
         })
             .then((res) => {

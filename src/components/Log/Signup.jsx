@@ -35,7 +35,7 @@ export default function Signup() {
     } else {
       await axios({
         method: "POST",
-        url: "http://localhost:4000/user/signup",
+        url: "/user/signup",
         data: { fullName, surname, password, email, gender },
       })
         .then((res) => {
@@ -63,85 +63,84 @@ export default function Signup() {
           </h4>
         </>
       ) : (
-        <form action="" onSubmit={handleRegister} className="form signup" >
-          <h2 className="signup__title" >Welcome on board !</h2>
+        <form action="" onSubmit={handleRegister} className="form signup">
+          <h2 className="signup__title">Welcome on board !</h2>
           <h3 className="signup__subtitle">Sign up to join the community</h3>
-            
-            <input
-              type="text"
-              name="fullName"
-              className="fullname"
-              placeholder="enter your fullname"
-              id="fullName"
-              onChange={(e) => setFullName(e.target.value)}
-              value={fullName}
-            />
-            <div className="fullName error"></div>
-        
-            <input
-              type="text"
-              placeholder="surname"
-              name="surname"
-              id="surname"
-              onChange={(e) => setSurname(e.target.value)}
-              value={surname}
-            />
-            <div className="surname error"></div>
-         
-           
-            <input
-              type="text"
-              name="gender"
-              placeholder="gender"
-              id="gender"
-              onChange={(e) => setGender(e.target.value)}
-              value={gender}
-            />
-            <div className="gender error"></div>
-        
-       
-         
-            <input
-              type="text"
-              name="email"
-              placeholder="enter your Email"
-              className="email"
-              id="email"
-              onChange={(e) => setEmail(e.target.value)}
-              value={email}
-            />
-            <div className="email error"></div>
-            <input
-              type="password"
-              name="password"
-              placeholder="Enter your password"
-              id="password"
-              onChange={(e) => setPassword(e.target.value)}
-              value={password}
-            />
-            <div className="password error"></div>
-          
-            <input
-              type="password"
-              name="password"
-              placeholder="Confirm password"
-              id="password-conf"
-              onChange={(e) => setConfirmPass(e.target.value)}
-              value={confirmPass}
-            />
-            <div className="password-confirm error"></div>
-          
-        
+
+          <input
+            type="text"
+            name="fullName"
+            className="fullname"
+            placeholder="enter your fullname"
+            id="fullName"
+            onChange={(e) => setFullName(e.target.value)}
+            value={fullName}
+          />
+          <div className="fullName error"></div>
+
+          <input
+            type="text"
+            placeholder="surname"
+            name="surname"
+            id="surname"
+            onChange={(e) => setSurname(e.target.value)}
+            value={surname}
+          />
+          <div className="surname error"></div>
+
+          <input
+            type="text"
+            name="gender"
+            placeholder="gender"
+            id="gender"
+            onChange={(e) => setGender(e.target.value)}
+            value={gender}
+          />
+          <div className="gender error"></div>
+
+          <input
+            type="text"
+            name="email"
+            placeholder="enter your Email"
+            className="email"
+            id="email"
+            onChange={(e) => setEmail(e.target.value)}
+            value={email}
+          />
+          <div className="email error"></div>
+          <input
+            type="password"
+            name="password"
+            placeholder="Enter your password"
+            id="password"
+            onChange={(e) => setPassword(e.target.value)}
+            value={password}
+          />
+          <div className="password error"></div>
+
+          <input
+            type="password"
+            name="password"
+            placeholder="Confirm password"
+            id="password-conf"
+            onChange={(e) => setConfirmPass(e.target.value)}
+            value={confirmPass}
+          />
+          <div className="password-confirm error"></div>
+
           <input type="checkbox" className="terms" />
           <p className="para">
             <a href="/" target="_blank" rel="noopener noreferrer">
-            J'accepte les{" "}
-              conditions générales
+              J'accepte les conditions générales
             </a>
           </p>
           <div className="terms error"></div>
-        
-          <input type="submit" placeholder="Valider inscription" className="btn"/>
+
+          <input
+            type="submit"
+            placeholder="Valider inscription"
+            className="btn"
+          />
         </form>
       )}
     </>

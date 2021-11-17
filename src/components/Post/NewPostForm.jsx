@@ -63,7 +63,6 @@ const NewPostForm = () => {
     };
     handleVideo();
   }, [userData, message, video]);
-
   return (
     <div className="post-container">
       {isLoading ? (
