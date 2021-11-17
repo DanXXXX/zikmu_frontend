@@ -5,9 +5,9 @@
 *,
 *::after,
 *::before {
-    margin: 0;
-    padding: 0;
-    box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
 }
 
 /*
@@ -29,31 +29,28 @@ html {
 }
 */
 body {
-    font-family: "Lato", serif, sans-serif;
-    box-sizing: border-box;
-    font-weight: 400;
-    /* font-size: 16px; */
-    line-height: 1.7;
-    background-color: #011B2A;
-    color: $white-color;
-    
+  font-family: "Poppins", sans-serif;
+  box-sizing: border-box;
+  font-weight: 400;
+  /* font-size: 16px; */
+  line-height: 1.7;
+  background-color: #011b2a;
+  color: $white-color;
 }
 
 body,
 input {
-
-    font-family: $font-family, $font-family-fallback;
+  font-family: $font-family, $font-family-fallback;
 }
 
 img {
-	max-width: 100%;
-	width: auto;
-	height: auto;
+  max-width: 100%;
+  width: auto;
+  height: auto;
 }
 
 a {
-    text-decoration: none;
-    color: $text-color;
-    cursor: pointer;
+  text-decoration: none;
+  color: $text-color;
+  cursor: pointer;
 }
-
