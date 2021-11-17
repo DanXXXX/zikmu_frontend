@@ -35,7 +35,7 @@ export default function Signup() {
     } else {
       await axios({
         method: "POST",
-        url: "/user/signup",
+        url: "http://localhost:4000/user/register",
         data: { fullName, surname, password, email, gender },
       })
         .then((res) => {
@@ -66,7 +66,6 @@ export default function Signup() {
         <form action="" onSubmit={handleRegister} className="form signup">
           <h2 className="signup__title">Welcome on board !</h2>
           <h3 className="signup__subtitle">Sign up to join the community</h3>
-
 
           <input
             type="text"
@@ -129,7 +128,7 @@ export default function Signup() {
           />
           <div className="password-confirm error"></div>
 
-          <input type="checkbox" className="terms" />
+          <input type="checkbox" className="terms" id="terms" />
           <p className="para">
             <a href="/" target="_blank" rel="noopener noreferrer">
               J'accepte les conditions générales
@@ -142,19 +141,8 @@ export default function Signup() {
             placeholder="Valider inscription"
             className="btn"
           />
-
-           
         </form>
       )}
     </>
   );
-
 }
-        {/* <input
-              type="text"
-              name="gender"
-              placeholder="gender"
-              id="gender"
-              onChange={(e) => setGender(e.target.value)}
-              value={gender}
-            /> */}

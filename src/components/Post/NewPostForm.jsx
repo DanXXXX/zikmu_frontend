@@ -9,7 +9,7 @@ const NewPostForm = () => {
   const [message, setMessage] = useState("");
   const [postPicture, setPostPicture] = useState(null);
   const [video, setVideo] = useState("");
-  const [file, setFile] = useState();
+  const [file, setFile] = useState("");
   const userData = useSelector((state) => state.userReducer);
   const error = useSelector((state) => state.errorReducer.postError);
   const dispatch = useDispatch();
@@ -81,13 +81,18 @@ const NewPostForm = () => {
               {userData.followers && userData.followers.length > 1 ? "s" : null}
             </p>
           </div>
-          <NavLink exact to="/profil">
+          <NavLink exact to="/user/profil">
             <div className="user-info">
-              <img src={userData.image} alt="user-img" />
+              <img
+                src={userData.image}
+                alt="user-img"
+                className="user-pic-form"
+              />
             </div>
           </NavLink>
           <div className="post-form">
             <textarea
+              className="form-area"
               name="message"
               id="message"
               placeholder="Quoi de neuf ?"
@@ -97,7 +102,11 @@ const NewPostForm = () => {
             {message || postPicture || video.length > 20 ? (
               <li className="card-container">
                 <div className="card-left">
-                  <img src={userData.image} alt="user-pic" />
+                  <img
+                    src={userData.image}
+                    className="user-pre-pic"
+                    alt="user-pic"
+                  />
                 </div>
                 <div className="card-right">
                   <div className="card-header">

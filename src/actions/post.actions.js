@@ -38,6 +38,7 @@ export const addPost = (data) => {
         return axios
             .post(`/post/submit`, data)
             .then((res) => {
+                console.log(data, "<<<<<<<<<< YOUHOU")
                 if (res.data.errors) {
                     dispatch({ type: GET_POST_ERRORS, payload: res.data.errors });
                 } else {

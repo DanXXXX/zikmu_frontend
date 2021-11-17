@@ -55,7 +55,7 @@ export default function LocationMarker({
         {LocationMarker()}
       </MapContainer>
       <p className="map-description">
-        <span>{locations?.length}</span> places Found, Login to see the details
+        <span>{locations?.length}</span> evenements trouves !
       </p>
 
       <ReactModal isOpen={false} />

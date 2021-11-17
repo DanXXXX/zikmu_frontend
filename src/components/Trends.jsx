@@ -28,10 +28,16 @@ const Trends = () => {
         <ul>
           {trendList.length &&
             trendList.map((post) => {
+              console.log(post);
               return (
                 <li key={post._id}>
                   <div>
-                    {post.image && <img src={post.image} alt="post-pic" />}
+                    {post.file && (
+                      <img
+                        src={`http://localhost:4000/${post.file}`}
+                        alt="post-pic"
+                      />
+                    )}
                     {post.video && (
                       <iframe
                         src={post.video}
@@ -48,13 +54,14 @@ const Trends = () => {
                           usersData
                             .map((user) => {
                               console.log("userTrend", user);
-                              if (user._id === post.posterId) {
+                              if (user._id === post.posterId._id) {
                                 return user.image;
                               } else return null;
                             })
                             .join("")
                         }
                         alt="profil-pic"
+                        className="trend-pic"
                       />
                     )}
                   </div>

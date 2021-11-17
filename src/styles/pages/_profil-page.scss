@@ -1,0 +1,52 @@
+.user-pic-profil {
+  height: 15vh;
+  width: 30vw;
+  border-radius: 40px;
+}
+
+.left-part {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  margin-top: 50px;
+}
+
+.right-part {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+}
+
+.upload-pic {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+}
+
+.user-pic-form {
+  height: 7vh;
+}
+
+.user-pre-pic {
+  height: 7vh;
+}
+
+#file {
+  border-radius: 20px;
+  background-color: $main-color;
+  height: 3vh;
+}
+
+.bio-update {
+  button {
+    width: 30vw;
+    border-radius: 20px;
+  }
+}
+
+.trend-pic {
+  height: 6vh;
+  width: 13vw;
+  margin-left: 20px;
+  border-radius: 25px;
+}
