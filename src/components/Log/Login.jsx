@@ -39,7 +39,7 @@ function Login() {
   return (
     <div className="login" >
       <h2 className="login__title" >Welcome back the artist !</h2>
-      <h3 className="login__subtitle">Sign in to exploit your univers</h3>
+      <h3 className="login__subtitle">Sign in to explore your univers</h3>
       <form action="" onSubmit={handleLogin} className="form" >
         <input
           type="text"
@@ -65,10 +65,10 @@ function Login() {
         />
         <div className="password error"></div>
         {/* <input type="submit" value="Login" /> */}
-        <p className="para">
-          <a to="#">Forgot password ?</a>
+        <p className="login__para">
+          <a to="#" className="para__link">Forgot password ?</a>
         </p>
-        <button type="submit" className="btn" >Login</button>
+        <input type="submit" value="Login" className="btn"/>
       </form>
     </div>
   );

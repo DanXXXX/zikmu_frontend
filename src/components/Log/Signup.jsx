@@ -67,6 +67,7 @@ export default function Signup() {
           <h2 className="signup__title">Welcome on board !</h2>
           <h3 className="signup__subtitle">Sign up to join the community</h3>
 
+
           <input
             type="text"
             name="fullName"
@@ -141,8 +142,19 @@ export default function Signup() {
             placeholder="Valider inscription"
             className="btn"
           />
+
+           
         </form>
       )}
     </>
   );
+
 }
+        {/* <input
+              type="text"
+              name="gender"
+              placeholder="gender"
+              id="gender"
+              onChange={(e) => setGender(e.target.value)}
+              value={gender}
+            /> */}
