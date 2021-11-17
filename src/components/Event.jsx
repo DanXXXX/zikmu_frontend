@@ -8,18 +8,16 @@ export default function Event({
   location,
   coordinates,
 }) {
-  console.log(coordinates);
+  //   console.log(coordinates);
   return (
-    <div id="event">
-      <img src={image} alt="event" />
-      <h3>{title}</h3>
-      <p>{text}</p>
-      <h5>{category}</h5>
-      <p>{location}</p>
-      <p>
-        {coordinates?.lat}
-        {coordinates?.lng}
-      </p>
+    <div className="eventContainer" id="event">
+      <div className="divider">
+        <img src={image} alt="event" />
+        <h3>{title}</h3>
+        <p>{text}</p>
+        <h5>{category}</h5>
+        <p>{location}</p>
+      </div>
     </div>
   );
 }

@@ -37,13 +37,15 @@ function Login() {
   };
 
   return (
-    <div>
-      <h1>Incrivez-vous</h1>
-      <form action="" onSubmit={handleLogin}>
+    <div className="login" >
+      <h2 className="login__title" >Welcome back the artist !</h2>
+      <h3 className="login__subtitle">Sign in to exploit your univers</h3>
+      <form action="" onSubmit={handleLogin} className="form" >
         <input
           type="text"
           name="email"
           id="email"
+          className="email"
           placeholder="email..."
           onChange={(e) => {
             console.log(e.target.value);
@@ -56,13 +58,17 @@ function Login() {
           type="password"
           name="password"
           id="password"
+          className="password"
           placeholder="password..."
           onChange={(e) => setPassword(e.target.value)}
           value={password}
         />
         <div className="password error"></div>
         {/* <input type="submit" value="Login" /> */}
-        <button type="submit">Login</button>
+        <p className="para">
+          <a to="#">Forgot password ?</a>
+        </p>
+        <button type="submit" className="btn" >Login</button>
       </form>
     </div>
   );

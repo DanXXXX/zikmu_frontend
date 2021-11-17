@@ -3,8 +3,8 @@ import axios from "axios";
 //import { UserContext } from "../App.js";
 import Header from "./components/layout/Header";
 import Footer from "./components/layout/Footer";
-import "bootstrap/dist/css/bootstrap.min.css";
-import "bootstrap/dist/js/bootstrap.min.js.map";
+// import "bootstrap/dist/css/bootstrap.min.css";
+// import "bootstrap/dist/js/bootstrap.min.js.map";
 import "./styles/main.scss";
 import Routes from "./components/Routes";
 import { UidContext } from "./components/AppContext";
@@ -38,6 +38,7 @@ const App = () => {
 
   return (
     <UidContext.Provider value={uid}>
+      <Header />
       <Routes />
       <Footer />
     </UidContext.Provider>
