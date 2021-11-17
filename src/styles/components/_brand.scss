@@ -1,1 +1,13 @@
-
+.brand {
+    width: 40%;
+    display: block;
+    text-align: center;
+    &__icon {
+        font-size: 3rem;
+        text-align: center;
+        &-play {
+            color: $white-color;
+        }
+    }
+  
+}

@@ -42,14 +42,15 @@ base/
 
 // 2. Import de la base
 @import
-    'base/reset',
-    'base/normalize',
-    'base/base';
+'base/reset',
+'base/normalize',
+'base/base';
 
 
 // 3. Import des layout
   @import
     'layout/header',
+    'layout/form',
     'layout/map';
 //     'layout/sidebar',
 //     'layout/main',
@@ -64,9 +65,7 @@ base/
     'components/navbar',
     'components/form-contact',
     'components/event',
-
     'components/post',
-
     'components/button';
    
     
