@@ -11,7 +11,7 @@ export default function Event({
   console.log(coordinates);
   return (
     <div id="event">
-      <img src={image} alt="" />
+      <img src={image} alt="event" />
       <h3>{title}</h3>
       <p>{text}</p>
       <h5>{category}</h5>

@@ -47,14 +47,18 @@ const FriendsHint = () => {
           <i className="fas fa-spinner fa-pulse"></i>
         </div>
       ) : (
-        <ul>
+        <ul className="friend-hint">
           {friendsHint &&
             friendsHint.map((user) => {
               for (let i = 0; i < usersData.length; i++) {
                 if (user === usersData[i]._id) {
                   return (
                     <li className="user-hint" key={user}>
-                      <img src={usersData[i].image} alt="user-pic" />
+                      <img
+                        src={usersData[i].image + ".png"}
+                        alt="user-pic"
+                        className="user-pic"
+                      />
                       <p>{usersData[i].surname}</p>
                       <FollowHandler
                         idToFollow={usersData[i]._id}
