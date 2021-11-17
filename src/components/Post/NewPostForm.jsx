@@ -81,9 +81,13 @@ const NewPostForm = () => {
               {userData.followers && userData.followers.length > 1 ? "s" : null}
             </p>
           </div>
-          <NavLink exact to="/profil">
+          <NavLink exact to="/user/profil">
             <div className="user-info">
-              <img src={userData.image} alt="user-img" />
+              <img
+                src={userData.image}
+                alt="user-img"
+                className="user-pic-form"
+              />
             </div>
           </NavLink>
           <div className="post-form">
@@ -98,7 +102,11 @@ const NewPostForm = () => {
             {message || postPicture || video.length > 20 ? (
               <li className="card-container">
                 <div className="card-left">
-                  <img src={userData.image} alt="user-pic" />
+                  <img
+                    src={userData.image}
+                    className="user-pre-pic"
+                    alt="user-pic"
+                  />
                 </div>
                 <div className="card-right">
                   <div className="card-header">

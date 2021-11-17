@@ -23,6 +23,14 @@
   align-items: center;
 }
 
+.user-pic-form {
+  height: 7vh;
+}
+
+.user-pre-pic {
+  height: 7vh;
+}
+
 #file {
   border-radius: 20px;
   background-color: $main-color;
@@ -34,4 +42,11 @@
     width: 30vw;
     border-radius: 20px;
   }
+}
+
+.trend-pic {
+  height: 6vh;
+  width: 13vw;
+  margin-left: 20px;
+  border-radius: 25px;
 }
