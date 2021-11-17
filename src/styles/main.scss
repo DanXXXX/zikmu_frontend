@@ -6,8 +6,7 @@
 |   |– _mixins.scss       # Sass Mixins
 |   |– _placeholders.scss # Sass Placeholders
 */
-@import
-    'abstracts/variables';
+@import "abstracts/variables";
 
 // 2. Inclusion de nos vendors
 /*
@@ -29,7 +28,6 @@
         
         */
 
-
 // ATTENTION A BIEN REMPLIR OU COMMENTER CHAQUE LIGNE
 /*
 
@@ -39,41 +37,19 @@ base/
                     # Etc.
 */
 
-
 // 2. Import de la base
-@import
-'base/reset',
-'base/normalize',
-'base/base';
-
+@import "base/reset", "base/normalize", "base/base";
 
 // 3. Import des layout
-  @import
-    'layout/header',
-    'layout/form',
-    'layout/map';
+@import "layout/header", "layout/form", "layout/map";
 //     'layout/sidebar',
 //     'layout/main',
 //     'layout/footer';
-       
-
 
 // 4. Import des components
-@import
-    
-    'components/brand',
-    'components/navbar',
-    'components/form-contact',
-    'components/event',
-    'components/post',
-    'components/button';
-   
-    
-
-    
-
+@import "components/brand", "components/navbar", "components/form-contact",
+  "components/event", "components/friends-hint", "components/post",
+  "components/button";
 
 // 5. Import shame
-@import
-    'shame';
-
+@import "shame";

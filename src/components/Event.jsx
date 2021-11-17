@@ -8,11 +8,11 @@ export default function Event({
   location,
   coordinates,
 }) {
-  console.log(coordinates);
+  //   console.log(coordinates);
   return (
     <div className="eventContainer" id="event">
       <div className="divider">
-        <img src={image} alt="" />
+        <img src={image} alt="event" />
         <h3>{title}</h3>
         <p>{text}</p>
         <h5>{category}</h5>
