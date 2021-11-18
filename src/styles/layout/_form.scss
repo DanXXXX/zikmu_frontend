@@ -1,87 +1,94 @@
-.login{
-	text-align: center;
-	width: 85vw;
-	margin: 10rem auto;
-	
-	&__title {
-		font-size: 2.3rem;
-		color: $main-color;
-	}
-	&__subtitle {
-		font-size: 1.8rem;
-		font-weight: 100;
-		margin-bottom: 2rem;
-	}
-	&__para {
-		text-align: center;
-		margin-top: .5rem;
-	}
-	
+.login {
+  text-align: center;
+  width: 85vw;
+  margin: 10rem auto;
+
+  &__title {
+    font-size: 2.3rem;
+    color: $main-color;
+  }
+  &__subtitle {
+    font-size: 1.8rem;
+    font-weight: 100;
+    margin-bottom: 2rem;
+  }
+  &__para {
+    text-align: center;
+    margin-top: 0.5rem;
+  }
 }
 .signup {
-	margin: 5rem auto;
-	width: 85vw;
-	&__title {
-		font-size: 2.3rem;
-		color: $main-color;
-	}
-	&__subtitle {
-		font-size: 1.8rem;
-		font-weight: 100;
-		margin-bottom: 2rem;
-	}
+  margin: 5rem auto;
+  width: 85vw;
+  &__title {
+    font-size: 2.3rem;
+    color: $main-color;
+  }
+  &__subtitle {
+    font-size: 1.8rem;
+    font-weight: 100;
+    margin-bottom: 2rem;
+  }
 }
 
 .form {
-	text-align: center;
-	&__title {
-		background-color: $main-color;
-		width: 85%;
-		margin: 0 auto;
-		text-align: center;
-	}
-	
+  text-align: center;
+  &__title {
+    background-color: $main-color;
+    width: 85%;
+    margin: 0 auto;
+    text-align: center;
+  }
 }
 
 input {
-	width: 100%;
-	height: 3rem;
-	font-size: 1rem;
-	border-radius: 2rem;
-	margin-top: 1rem;
-	margin-bottom: 0;
+  width: 100%;
+  height: 3rem;
+  font-size: 1rem;
+  border-radius: 2rem;
+  margin-top: 1rem;
+  margin-bottom: 0;
 }
-
 
 ::placeholder {
-	padding-left: 1.2rem;
+  padding-left: 1.2rem;
 }
 
-
 .inputFlex {
-	display: flex;
-	margin-top: 0.5rem;
-	
-
+  display: flex;
+  margin-top: 0.5rem;
 }
 
 .terms {
-	height: 1rem;
-	width: 15%;
-	text-align: end;
+  height: 1rem;
+  width: 15%;
+  text-align: end;
 }
-.para{
-	
-	width: 80%;
-	margin-top: 0.7rem;
+.para {
+  width: 80%;
+  margin-top: 0.7rem;
 }
 .para__link {
-	color: $main-color;
+  color: $main-color;
 }
 
 .btn {
-	color: $white-color;
-	background-color: $main-color;
+  color: $white-color;
+  background-color: $main-color;
 }
 
+.map-container-set {
+  margin-bottom: 10px;
+}
+.form-control {
+  width: 90vw;
+  margin-left: 20px;
+  margin-bottom: 10px;
+  border-radius: 20px;
+}
 
+.EventForm {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+}

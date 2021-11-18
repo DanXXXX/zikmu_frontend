@@ -2,6 +2,9 @@
   // border: solid 1px lightgray;
   width: 50vw;
   height: 30vh;
+  border-radius: 20px;
+  display: flex;
+  flex-flow: column;
 }
 
 .divider {
@@ -12,4 +15,10 @@
   border: none;
   box-sizing: content-box;
   margin: 5px auto;
+}
+
+#list-event {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
 }

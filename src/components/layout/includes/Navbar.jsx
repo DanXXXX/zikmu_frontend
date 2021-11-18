@@ -10,15 +10,15 @@ function Navbar(props) {
         </Link>
 
         <Link to="/event">
-          <i class="fa fa-envelope"></i>
+          <i class="fa fa-map"></i>
         </Link>
 
         <Link to="/event/submit">
           <i class="fa fa-envelope">+</i>
         </Link>
-        <Link to="/conversation">
+        {/* <Link to="/conversation">
           <i class="fa fa-trash"></i>
-        </Link>
+        </Link> */}
 
         <Link to="/user/profil">
           <i class="fa fa-user"></i>

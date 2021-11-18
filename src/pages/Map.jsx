@@ -34,7 +34,8 @@ export default function LocationMarker({
           <Popup className="pop-up">
             <h3>{location.title}</h3>
             <p>{location.text}</p>
-            <button>Details</button>
+            <p>{location.category}</p>
+            {/* <button>Details</button> */}
           </Popup>
         </Marker>
       );
