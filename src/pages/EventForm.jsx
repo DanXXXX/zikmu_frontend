@@ -2,7 +2,6 @@ import React from "react";
 import { useForm } from "react-hook-form";
 import { useState, useEffect } from "react";
 import axios from "axios";
-import Modal from "react-modal";
 import {
   MapContainer,
   TileLayer,
@@ -21,13 +20,6 @@ export default function EventForm({ userID, setUserID, user }) {
   const [category, setCategory] = useState("");
   const [file, setFile] = useState("");
   const [location, setLocation] = useState("");
-  const [userId, setUserId] = useState(
-    userID ? userID : localStorage.getItem("userId")
-  );
-
-  const [username, setUsername] = useState("");
-  const [images, SetImages] = useState([]);
-  const [showModal, setShowModal] = useState(false);
   const [coordinates, setCoords] = useState({});
   const [markers, setMarkers] = useState([]);
 
@@ -44,64 +36,51 @@ export default function EventForm({ userID, setUserID, user }) {
   };
 
   const handleFile = (e) => {
-    setFile(e.target.value);
+    // setFile(URL.createObjectURL(e.target.files[0]));
+    setFile(e.target.files[0]);
+    // setVideo("");
   };
 
   const handleLocation = (e) => {
     setLocation(e.target.value);
   };
 
-  const onChangeImages = (e) => {
-    SetImages([...e.target.file]);
-  };
-
   const addLocation = (e) => {
     e.preventDefault();
-    const data = new FormData();
-    data.append("title", title);
-    data.append("text", text);
-    data.append("category", category);
-    data.append("file", file);
-    data.append("coordinates", JSON.stringify(coordinates));
+    const formData = new FormData();
+    formData.append("title", title);
+    formData.append("text", text);
+    formData.append("category", category);
+    formData.append("file", file);
+    formData.append("coordinates", JSON.stringify(coordinates));
 
     // images?.forEach((image) => {
     //   formData.append("images", image);
     // });
-    // for (let [key, value] of formData.entries()) {
-    //   console.log(key, value);
-    // }
-    fetch("http://localhost:4000/event/submit", {
-      method: "post",
-      body: data,
-    }).then((res) => console.log(res));
-    // axios
-    //   .post("http://localhost:4000/event/submit", { title: "hello" })
-    //   .then((res) => console.log(res))
-    //   .catch((err) => console.log(err));
-  };
-  if (
-    localStorage.getItem("userId") === "" ||
-    (userID && localStorage.getItem("userId") !== userID)
-  ) {
-    localStorage.setItem("userId", userID);
-    setUserId(localStorage.getItem("userId"));
-  }
-
-  useEffect(() => {
-    if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition((e) =>
-        setMarkers([...markers, [e.coords.latitude, e.coords.longitude]])
-      );
+    for (let [key, value] of formData.entries()) {
+      console.log(key, value);
     }
-  }, []);
+    axios
+      .post("http://localhost:4000/event/submit", formData)
+      .then((res) => console.log(res))
+      .catch((err) => console.log(err));
+    console.log("add");
+  };
 
   function LocationMarker() {
+    useEffect(() => {
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition((e) =>
+          setMarkers([...markers, [e.coords.latitude, e.coords.longitude]])
+        );
+      }
+    }, []);
+
     useMapEvents({
       click(e) {
         // console.log(e.latlng.lat, e.latlng.lng);
         setMarkers([...markers, [e.latlng.lat, e.latlng.lng]]);
         setCoords({ lat: e.latlng.lat, lng: e.latlng.lng });
-        setShowModal(true);
       },
     });
 
@@ -128,15 +107,11 @@ export default function EventForm({ userID, setUserID, user }) {
     },
   };
 
-  useEffect(() => {
-    setUsername(user?.username ? user?.username : "Username");
-  }, []);
-
   return (
     <div add-event>
       <h1 className="title">Ajouter un évènement</h1>
       <div className="EventForm">
-        <form onSubmit={addLocation}>
+        <form action="" onSubmit={addLocation}>
           <h1>Event form</h1>
           <input
             name="title"
@@ -169,14 +144,16 @@ export default function EventForm({ userID, setUserID, user }) {
             <option value="Opéra">Opéra</option>
             <option value="Autre">Autre...</option>
           </select>
-          <input
-            name="file"
-            type="file"
-            className="form-control"
-            placeholder="Lien vers l'évènement"
-            value={file}
-            onChange={handleFile}
-          />
+          <>
+            {/* <img src="./image/icons/picture.svg" alt="img" /> */}
+            <input
+              type="file"
+              id="file-upload"
+              name="file"
+              accept=".jpg, .jpeg, .png"
+              onChange={(e) => handleFile(e)}
+            />
+          </>
           <input
             name="location"
             type="text"
@@ -199,11 +176,12 @@ export default function EventForm({ userID, setUserID, user }) {
               <LocationMarker />
             </MapContainer>
           </div>
+
           <input
             type="submit"
+            value="Poster l'evenement"
             className="btn btn-outline-light btn-extend-lg btn-block"
           />
-          Poster l'évènement
         </form>
       </div>
     </div>

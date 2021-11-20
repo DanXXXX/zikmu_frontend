@@ -9,24 +9,27 @@ export default function ListEvent() {
 
   useEffect(() => {
     axios.get(`${baseUrl}/event`).then((res) => {
-      console.log(res.data);
+      console.log(res.data, "oublie pas<<<<<<<<<<<<<<<");
       setData(res.data.events);
     });
   }, []);
-
+  console.log(data);
   return (
     <div id="event">
       <ul>
         <Map
-          image={data.file}
+          image={data?.map((docs) => {
+            console.log(docs);
+            return docs.file;
+          })}
           title={data.title}
           category={data.category}
           location={data.location}
           coordinates={data.coordinatesObject}
         />
-        ;
+
         {data?.map((docs) => {
-          console.log(docs);
+          // console.log(docs);
           return (
             <div id="list-event">
               <Event
@@ -34,6 +37,7 @@ export default function ListEvent() {
                 title={docs.title}
                 category={docs.category}
                 location={docs.location}
+                text={docs.text}
                 coordinates={docs.coordinatesObject}
               />
             </div>
