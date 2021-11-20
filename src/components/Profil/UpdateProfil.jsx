@@ -22,7 +22,7 @@ const UpdateProfil = () => {
 
   return (
     <div className="profil-container">
-      <h1> Profil de {userData.pseudo}</h1>
+      <h1> Profil de {userData.surname}</h1>
       <div className="update-container">
         <div className="left-part">
           <h3>Photo de profil</h3>

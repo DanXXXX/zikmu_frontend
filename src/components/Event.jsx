@@ -10,13 +10,17 @@ export default function Event({
 }) {
   //   console.log(coordinates);
   return (
-    <div className="eventContainer" id="event">
-      <div className="divider">
-        <img src={image} alt="event" />
-        <h3>{title}</h3>
-        <p>{text}</p>
-        <h5>{category}</h5>
-        <p>{location}</p>
+    <div className="event-container" id="event">
+      <div className="flex">
+        <div className="right">
+          <img src={image} alt="event" className="imag" />
+        </div>
+        <div className="left">
+          <h3 className="title">{title}</h3>
+          <p className="para">{text}</p>
+          <h5 className="cate">{category}</h5>
+          <h5 className="location">{location}</h5>
+        </div>
       </div>
     </div>
   );

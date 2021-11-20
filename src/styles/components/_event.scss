@@ -22,3 +22,34 @@
   flex-flow: column;
   align-items: center;
 }
+
+// <
+
+.flex {
+  display: flex;
+  border: 1px solid;
+  border-radius: 2rem;
+  width: 100vw;
+}
+.left {
+  width: 50%;
+  .title {
+    margin-top: 20px;
+    margin-right: 10px;
+    border-radius: 20px;
+  }
+}
+.left img {
+  height: 100%;
+  border-radius: 2rem 0 0 2rem;
+}
+.right {
+  width: 50%;
+  padding: 1rem;
+}
+
+.imag {
+  height: 20vh;
+  width: 80vw;
+  border-radius: 20px;
+}

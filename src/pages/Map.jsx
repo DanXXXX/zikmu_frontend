@@ -11,6 +11,7 @@ export default function LocationMarker({
   coordinates,
 }) {
   const [locations, setLocations] = useState([]);
+  console.log(image);
   useEffect(() => {
     axios
       .get(`http://localhost:4000/event`)
@@ -22,6 +23,10 @@ export default function LocationMarker({
   }, []);
   const LocationMarker = () => {
     console.log("marker");
+    image?.map((img) => {
+      console.log(img);
+      return img;
+    });
     return locations?.map((location) => {
       console.log(location);
       return (
@@ -33,6 +38,7 @@ export default function LocationMarker({
         >
           <Popup className="pop-up">
             <h3>{location.title}</h3>
+            <img src={image[4]} alt="event" />
             <p>{location.text}</p>
             <p>{location.category}</p>
             {/* <button>Details</button> */}

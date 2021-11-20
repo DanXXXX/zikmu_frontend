@@ -88,7 +88,7 @@ export default function Signup() {
           />
           <div className="surname error"></div>
 
-          <input
+          {/* <input
             type="text"
             name="gender"
             placeholder="gender"
@@ -96,7 +96,7 @@ export default function Signup() {
             onChange={(e) => setGender(e.target.value)}
             value={gender}
           />
-          <div className="gender error"></div>
+          <div className="gender error"></div> */}
 
           <input
             type="text"

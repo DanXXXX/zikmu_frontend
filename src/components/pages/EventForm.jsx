@@ -65,8 +65,7 @@ export default function EventForm({ userID, setUserID, user }) {
     formData.append("type", type);
     console.log(typeof coordinates, coordinates);
     formData.append("coordinates", JSON.stringify(coordinates));
-    formData.append("userId", userId);
-    formData.append("username", username);
+
     images?.forEach((image) => {
       formData.append("images", image);
     });
@@ -76,13 +75,6 @@ export default function EventForm({ userID, setUserID, user }) {
       .catch((err) => console.log(err));
     setShowModal(false);
   };
-  if (
-    localStorage.getItem("userId") === "" ||
-    (userID && localStorage.getItem("userId") !== userID)
-  ) {
-    localStorage.setItem("userId", userID);
-    setUserId(localStorage.getItem("userId"));
-  }
 
   useEffect(() => {
     if (navigator.geolocation) {
@@ -123,25 +115,6 @@ export default function EventForm({ userID, setUserID, user }) {
       backgroundColor: "rgb(2, 56, 69)",
       borderRadius: "20px",
     },
-  };
-
-  useEffect(() => {
-    setUsername(user?.username ? user?.username : "Username");
-  }, []);
-
-  const requestOptions = () => {
-    axios({
-      method: "POST",
-      url: "http://localhost:4000/event/submit",
-      data: { title, text, category, file, location },
-    }).then((response) => {
-      if (response.data.status === "success") {
-        alert("Event sent.");
-        this.restForm();
-      } else if (response.data.status === "fail") {
-        alert("Event failed to send. ");
-      }
-    });
   };
 
   return (
@@ -204,12 +177,12 @@ export default function EventForm({ userID, setUserID, user }) {
           />
 
           <div className="button-forms d-grid gap-2 col-12 mx-auto">
-            <button
+            <input
               type="submit"
               className="btn btn-outline-dark btn-extend-lg btn-block"
             >
               Poster l'évènement
-            </button>
+            </input>
           </div>
         </form>
       </div>
