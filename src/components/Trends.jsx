@@ -28,7 +28,7 @@ const Trends = () => {
         <ul>
           {trendList.length &&
             trendList.map((post) => {
-              console.log(post);
+              // console.log(post);
               return (
                 <li key={post._id}>
                   <div>
@@ -53,7 +53,7 @@ const Trends = () => {
                           usersData[0] &&
                           usersData
                             .map((user) => {
-                              console.log("userTrend", user);
+                              // console.log("userTrend", user);
                               if (user._id === post.posterId._id) {
                                 return user.image;
                               } else return null;

@@ -117,15 +117,15 @@ export const addComment = (postId, commenterId, text, commenterPseudo) => {
     };
 };
 
-export const editComment = (postId, commentId, text) => {
+export const editComment = (postId, commentId, text, commenterPseudo, commenterId) => {
     return (dispatch) => {
         return axios({
             method: "patch",
             url: `/post/edit-comment-post/${postId}`,
-            data: { commentId, text },
+            data: { commentId, text, commenterPseudo, commenterId },
         })
             .then((res) => {
-                dispatch({ type: EDIT_COMMENT, payload: { postId, commentId, text } });
+                dispatch({ type: EDIT_COMMENT, payload: { postId, commentId, text, commenterPseudo, commenterId } });
             })
             .catch((err) => console.log(err));
     };

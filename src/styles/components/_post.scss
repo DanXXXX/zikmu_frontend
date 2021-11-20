@@ -33,7 +33,7 @@
 
 .icon {
   img {
-    position: fixed;
+    position: absolute;
     margin-top: 10px;
   }
 }
@@ -131,4 +131,17 @@
 
 .form-area {
   border-radius: 12px;
+}
+
+.comment-container-client {
+  .right-part {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+  }
+}
+
+.user-comment {
+  margin: 10px;
+  text-align: center;
 }

@@ -50,3 +50,40 @@
   margin-left: 20px;
   border-radius: 25px;
 }
+
+.modal {
+  background-color: $main-color;
+  border-radius: 30px;
+  width: 80vw;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  margin-bottom: 80px;
+  ul {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+  }
+  li {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    background-color: $back-color;
+    border-radius: 25px;
+    margin: 10px;
+    button {
+      border-radius: 20px;
+      background-color: $back-color;
+      border: 1px solid $white-color;
+      color: $white-color;
+      padding: 10px;
+    }
+    img {
+      border-radius: 20px;
+    }
+  }
+}
+.popup-profil-container {
+  display: flex;
+  justify-content: center;
+}

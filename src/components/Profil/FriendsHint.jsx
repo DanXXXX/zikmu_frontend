@@ -50,7 +50,7 @@ const FriendsHint = () => {
         <ul className="friend-hint">
           {friendsHint &&
             friendsHint.map((user) => {
-              console.log(userData);
+              // console.log(userData);
               for (let i = 0; i < usersData.length; i++) {
                 if (user === usersData[i]._id) {
                   return (

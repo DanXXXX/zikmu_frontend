@@ -15,12 +15,12 @@ const CardComments = ({ post }) => {
     e.preventDefault();
 
     if (text) {
-      dispatch(addComment(post._id, userData._id, text, userData.pseudo))
+      dispatch(addComment(post._id, userData._id, text, userData.surname))
         .then(() => dispatch(getPosts()))
         .then(() => setText(""));
     }
   };
-
+  console.log(post);
   return (
     <div className="comments-container">
       {post.comments.map((comment) => {
@@ -39,7 +39,10 @@ const CardComments = ({ post }) => {
                   !isEmpty(usersData[0]) &&
                   usersData
                     .map((user) => {
-                      if (user._id === comment.commenterId) return user.image;
+                      console.log(user);
+                      console.log(comment);
+                      if (user._id === comment.commenterId)
+                        return `http://localhost:4000/${user.image}`;
                       else return null;
                     })
                     .join("")
@@ -51,7 +54,7 @@ const CardComments = ({ post }) => {
             <div className="right-part">
               <div className="comment-header">
                 <div className="pseudo">
-                  <h3>{comment.commenterPseudo}</h3>
+                  <h3 className="user-comment">{comment.commenterPseudo}</h3>
                   {comment.commenterId !== userData._id && (
                     <FollowHandler
                       idToFollow={comment.commenterId}

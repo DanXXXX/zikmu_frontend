@@ -35,7 +35,7 @@ const EditDeleteComment = ({ comment, postId }) => {
     <div className="edit-comment">
       {isAuthor && edit === false && (
         <span onClick={() => setEdit(!edit)}>
-          <img src="./img/icons/edit.svg" alt="edit-comment" />
+          <img src="./image/icons/edit.svg" alt="edit-comment" />
         </span>
       )}
       {isAuthor && edit && (
@@ -59,7 +59,7 @@ const EditDeleteComment = ({ comment, postId }) => {
                 }
               }}
             >
-              <img src="./img/icons/trash.svg" alt="delete" />
+              <img src="./image/icons/trash.svg" alt="delete" />
             </span>
             <input type="submit" value="Valider modification" />
           </div>
